@@ -1,0 +1,32 @@
+.product_card {
+    height: 14rem;
+    display: flex;
+    padding: 1rem;
+}
+
+.product_img {
+    /* height: 7rem; */
+    width: 100%;
+    overflow: hidden;
+}
+.product_img img {
+    /* height: 7rem;    */
+    object-fit: cover;
+    width: 100%;
+}
+.product_info {
+    padding: 0.5rem 0 0.5rem 1rem;
+    font-weight: 500;
+}
+
+.tags {
+    display: flex;
+    
+}
+.tags span {
+    border: 2px solid grey;
+    padding: 0.2em 0.4em;
+    border-radius: 16px;
+    background-color: lightblue;
+    margin-right: 1rem;
+}

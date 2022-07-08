@@ -1,0 +1,18 @@
+.product_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+}
+
+.product_list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.product_list ul li {
+    width: 31%;
+    /* position: relative; */
+    margin-bottom: 1.5rem;
+}
+

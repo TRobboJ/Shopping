@@ -1,13 +1,19 @@
 import Hero from "../components/layout/Hero";
+import ProductList from "../components/products/ProductList";
 
 function HomePage(props) {
-  console.log(props.productData)
-
+  
+  
   return (
       <>
-      <div>Welcome to Next.js!</div>
+      {/* <div>Welcome to Next.js!</div>
       <p>{props.productData[1].title}</p>
-      <Hero />
+      {props.productData.map((product)=> {
+        <Product imageUrl={product.imageUrl} />
+      })}
+      <img src={props.productData[1].imageUrl} /> */}
+        {/* <Hero /> */}
+        <ProductList />
       </>
       
    
@@ -17,30 +23,30 @@ function HomePage(props) {
 export default HomePage;
 
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
 
 
   
-    const response = await fetch(process.env.STORE_API)
-    const productData = await response.json()
+//     const response = await fetch(process.env.STORE_API)
+//     const productData = await response.json()
     
 
 
-  return {
-    props: {      
-      productData: productData.map((product) => ({
-        id: product.id.toString(),
-        title: product.title,
-        price: product.price,
-        description: product.description,
-        category: product.category,
-        imageUrl: product.image,
-        rating: product.rating,
-      }))
-    }
-  }
+//   return {
+//     props: {      
+//       productData: productData.map((product) => ({
+//         id: product.id.toString(),
+//         title: product.title,
+//         price: product.price,
+//         description: product.description,
+//         category: product.category,
+//         imageUrl: product.image,
+//         rating: product.rating,
+//       }))
+//     }
+//   }
     
-}
+// }
 
 //Example of response from server
 // {"id":1,
