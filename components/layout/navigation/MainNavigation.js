@@ -1,14 +1,14 @@
-import styles from './MainNavigation.module.scss'
+import styles from './NavBar.module.scss'
 import NavLinks from './NavLinks';
 
 function MainNavigation() {
-  
+
   return (
-    <header className={styles.header}> 
-      <nav>
+    
+      <nav className={styles.navigation}>
         <NavLinks />
       </nav>
-    </header>
+    
   );
 }
 

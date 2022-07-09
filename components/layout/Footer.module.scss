@@ -1,0 +1,15 @@
+@use '../../styles/base.scss';
+
+.footer {
+    width: 100%;
+    min-height: 10rem;
+    background-color: base.$body-contrast;
+}
+.footer p {
+    color: base.$body-colour;
+    padding-left: 1rem;
+}
+.footer .information {
+    background-color: base.$tertiary-colour;
+    min-height: 7rem;
+}

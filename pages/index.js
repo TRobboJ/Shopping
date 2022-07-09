@@ -1,7 +1,7 @@
 import Hero from "../components/layout/Hero";
 import StoreView from "../components/layout/StoreView";
 import styles from './index.module.scss'
-
+import Footer from '../components/layout/Footer'
 
 function HomePage(props) {
   
@@ -17,7 +17,6 @@ function HomePage(props) {
       <img src={props.productData[1].imageUrl} /> */}
         {/* <Hero /> */}
         <StoreView />
-        <h1 className={styles.test}>TESTING SASS</h1>
       </>
       
    

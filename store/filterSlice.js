@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const hamburgerSlice = createSlice({
-  name: 'hamburger',
+export const fliterSlice = createSlice({
+  name: 'filter',
   initialState: {
     menuIsOpen: false,
   },
@@ -15,6 +15,6 @@ export const hamburgerSlice = createSlice({
   },
 })
 
-export const { openMenu, closeMenu } = hamburgerSlice.actions
+export const { openMenu, closeMenu } = fliterSlice.actions
 
-export default hamburgerSlice.reducer
+export default fliterSlice.reducer

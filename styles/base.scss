@@ -1,15 +1,19 @@
 //Fonts
 
 $font-stack: Tahoma, Verdana, Geneva;
-$font-stack-header: Tahoma, Verdana, Geneva;
+$font-stack-header: Helvetica, 'Helvetica Neue', Arial, 'Lucida Grande', sans-serif;
 $font-stack-body: Tahoma, Verdana, Geneva; 
 
 //Colours
 
 $primary-colour: #282c34;
 $secondary-colour: #61dafb;
+$tertiary-colour: lightblue;
 $highlight-colour: #f0981d;
 
 $body-colour: #fdfdfe;
 $body-contrast: #102445;
 
+//Nav
+
+$header-height: 5rem;

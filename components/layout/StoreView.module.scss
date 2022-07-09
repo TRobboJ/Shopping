@@ -1,21 +1,17 @@
 @use '../../styles/base.scss';
 
-
-.sidebar {
-   min-width: 30%;
+.store_view {
+    display: flex;
 }
 
-.sidebar_close_icon {
+.sidebar_icon {
     color: base.$primary-colour;
     position: sticky;
-    text-align: left;
     top: 0;
     z-index: 100;
-    padding: 0.2rem;
-    opacity: 0.8;
 }
 
-.sidebar_close_icon:hover {
+.sidebar_icon:hover {
     color: base.$highlight-colour;
     cursor: pointer;
 }

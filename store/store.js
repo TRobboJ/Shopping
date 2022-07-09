@@ -1,6 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import hamburgerSlice from './hamburgerSlice'
+import hamburgerReducer from './hamburgerSlice'
+import filterReducer from './filterSlice'
 
 export default configureStore({
-  reducer: {hamburgerSlice.reducer},
+  reducer: {
+    hamburger: hamburgerReducer,
+    filter: filterReducer,
+  },
 })
