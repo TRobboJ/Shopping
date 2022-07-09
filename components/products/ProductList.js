@@ -7,7 +7,7 @@ export default function ProductList() {
   return (
     <>
     <div className={styles.product_list}>
-    <ul className={styles.product_list}>
+    <ul>
         <li>
         <Product />
         </li>

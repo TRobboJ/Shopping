@@ -10,11 +10,11 @@ export default function ProductCard(props) {
                 <img src={DUMMY_DATA[0].image}/>
             </div>
             <div className={styles.product_info}>
-                <p>{DUMMY_DATA[0].title}</p>
+                <h3>{DUMMY_DATA[0].title}</h3>
                 <p>{`$${DUMMY_DATA[0].price.toFixed(2)}`}</p>
                 <div className={styles.tags}>
-                    <span>{`★${DUMMY_DATA[0].rating.rate}`}</span>
-                    <span>{`👍${DUMMY_DATA[0].rating.count}`}</span>
+                    <span>{`★ ${DUMMY_DATA[0].rating.rate}`}</span>
+                    <span>{`🗨 ${DUMMY_DATA[0].rating.count}`}</span>
                 </div>
                 
             </div>
