@@ -1,9 +1,12 @@
 import Hero from "../components/layout/Hero";
-import ProductList from "../components/products/ProductList";
+import StoreView from "../components/layout/StoreView";
+import styles from './index.module.scss'
+
 
 function HomePage(props) {
   
   
+
   return (
       <>
       {/* <div>Welcome to Next.js!</div>
@@ -13,7 +16,8 @@ function HomePage(props) {
       })}
       <img src={props.productData[1].imageUrl} /> */}
         {/* <Hero /> */}
-        <ProductList />
+        <StoreView />
+        <h1 className={styles.test}>TESTING SASS</h1>
       </>
       
    

@@ -1,3 +1,9 @@
+@use '../../styles/base.scss';
+
+
+
+
+
 .product_card {
     height: 14rem;
     display: flex;
@@ -29,4 +35,5 @@
     border-radius: 16px;
     background-color: lightblue;
     margin-right: 1rem;
+    font-weight: 400;
 }

@@ -1,0 +1,21 @@
+  @use '../../styles/base.scss';
+  
+  .button span {
+    margin: 0 0.5rem;
+  }
+  
+  .badge {
+    background-color: base.$secondary-colour;
+    border-radius: 30px;
+    padding: 0.15rem 1.25rem;
+    color: base.$primary-colour;
+  }
+
+  .button:hover {
+    .badge {
+    background-color: base.$primary-colour;
+    border-radius: 30px;
+    padding: 0.15rem 1.25rem;
+    color: base.$secondary-colour;
+   }
+  }

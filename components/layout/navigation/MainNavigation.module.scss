@@ -1,10 +1,12 @@
+@use '../../../styles/base.scss';
+
 .header {
     width: 100%;
     height: 5rem;
     display: flex;
     /* align-items: center;
     justify-content: space-between; */
-    background-color: #77002e;
+    background-color: base.$primary-colour;
     padding: 0 10%;
   }
   .header nav {
@@ -17,7 +19,7 @@
   
   .logo {
     font-size: 2rem;
-    color: white;
+    color: base.$body-colour;
     font-weight: bold;
     
   }
@@ -37,12 +39,13 @@
   .header a {
     text-decoration: none;
     font-size: 1.5rem;
-    color: #fcb8d2;
+    color: base.$secondary-colour;
+    font-weight: 600;
   }
   
   .header a:hover,
   .header a:active,
   .header a.active {
-    color: white;
+    color: base.$body-colour;
   }
   

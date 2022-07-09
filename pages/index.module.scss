@@ -1,0 +1,12 @@
+@use '../styles/base.scss';
+@import '../node_modules/include-media/dist/include-media';
+
+
+
+.test {
+    color: base.$primary-colour;
+    @include media(">tablet") {
+      color: red;
+    }
+  }
+  

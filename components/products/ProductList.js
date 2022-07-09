@@ -2,9 +2,10 @@ import React from 'react'
 import Product from './Product'
 import styles from './ProductList.module.css'
 
+
 export default function ProductList() {
   return (
-    
+    <>
     <div className={styles.product_list}>
     <ul className={styles.product_list}>
         <li>
@@ -27,6 +28,6 @@ export default function ProductList() {
         </li>
     </ul>
     </div>
-    
+    </>
   )
 }

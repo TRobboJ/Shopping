@@ -1,4 +1,4 @@
-import MainNavigation from './MainNavigation';
+import MainNavigation from './navigation/MainNavigation';
 import Footer from './Footer';
 import styles from './Layout.module.css';
 

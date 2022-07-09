@@ -1,4 +1,4 @@
-import styles from './CartButton.module.css';
+import styles from './CartButton.module.scss';
 // import {uiActions} from '../../store/ui-slice';
 // import { useSelector, useDispatch } from 'react-redux';
 

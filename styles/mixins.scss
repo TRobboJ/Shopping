@@ -1,0 +1,24 @@
+@use './base.scss';
+
+@mixin button-theme($theme: base.$primary-colour, $border: base.$secondary-colour) {
+    font: inherit;
+    cursor: pointer;
+    background-color: $theme;
+    color: $border;
+    border: 2px solid $border;
+    border-radius: 10px;
+  }
+
+ 
+  
+//   .info {
+//     @include theme;
+//   }
+//   .alert {
+//     @include theme($theme: DarkRed);
+//   }
+//   .success {
+//     @include theme($theme: DarkGreen);
+//   }
+  
+  
