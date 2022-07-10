@@ -1,74 +1,82 @@
-@use '../../styles/base.scss';
-@import '../../styles/mixins.scss';
-
-
-
+@use "../../styles/base.scss";
+@import "../../styles/mixins.scss";
 
 .sidebar {
-   max-width: 30%;
+  max-width: 30%;
 }
 
 .sidebar_close_icon {
-    color: base.$input-colour;
-    
-    text-align: left;
-    top: 0;
-    z-index: 100;
-    padding: 0.2rem;
-    opacity: 0.8;
+  color: base.$input-colour;
+
+  text-align: left;
+  top: 0;
+  z-index: 100;
+  padding: 0.2rem;
+  opacity: 0.8;
 }
 
-.sidebar_close_icon:hover {
-    color: base.$highlight-colour;
-    cursor: pointer;
+.sidebar_close_icon svg:hover {
+  color: base.$highlight-colour;
+  cursor: pointer;
 }
 .search_content {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
 }
 
 .header,
 .content {
-    color: base.$input-colour;
-    padding: 4px 16px 12px;
-    line-height: 1.15;
+  color: base.$input-colour;
+  padding: 4px 16px 12px;
+  line-height: 1.15;
 }
 .header {
-    font-size: 1.15rem;
-    border-top: 1px solid base.$input-border;
+  font-size: 1.15rem;
+  border-top: 1px solid base.$input-border;
 }
 .content {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 .content ul li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .content ul li:hover {
-    color: base.$highlight-colour;
-    cursor: pointer;
+  color: base.$highlight-colour;
+  cursor: pointer;
 }
 
 .price_input {
-    
-    input {
-        @include input-theme;
-        max-width: 30%;
-    }
-    span,
-    input {
-        margin: 0 1rem 0 0;
-    }
+  input {
+    @include input-theme;
+    max-width: 30%;
+  }
+  span,
+  input {
+    margin: 0 1rem 0 0;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 .query_input {
-    input {
-        @include input-theme;
-        max-width: 80%;
-        margin: 0 auto;
-    }
+  input {
+    @include input-theme;
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 .reset {
-    input {
-        @include input-theme;
-        max-width: 30%;
-    }
+  input {
+    @include input-theme;
+    max-width: 30%;
+  }
+  input:hover {
+    color: base.$highlight-colour;
+    border-color: base.$highlight-colour;
+  }
 }

@@ -1,5 +1,11 @@
 @use '../../styles/base.scss';
 
+.topbar {
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 1px solid base.$tone-secondary-colour;
+}
+
 .store_view {
     display: flex;
 }
@@ -14,4 +20,8 @@
 .sidebar_icon:hover {
     color: base.$highlight-colour;
     cursor: pointer;
+}
+.queries {
+    margin: 0;
+    padding: 0;
 }

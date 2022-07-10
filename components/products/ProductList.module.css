@@ -1,5 +1,5 @@
 .product_list {
-  padding: 2rem 1rem 2rem 0;
+  padding: 0 1rem 2rem 0;
 }
 
 .product_list ul {
@@ -25,7 +25,7 @@
 
 @media (min-width: 768px) {
   .product_list {
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
   }
   .product_list ul {
     flex-direction: row;

@@ -8,8 +8,8 @@ import {TbLayoutSidebarLeftExpand} from 'react-icons/tb'
 
 export default function StoreView(props) {
   const dispatch = useDispatch()
-  const {menuIsOpen} = useSelector(state=>state.filter)
-  const iconSize = `40px`
+  const {menuIsOpen, query} = useSelector(state=>state.filter)
+  const iconSize = `30px`
 
   function toggleFilter() {
       if (menuIsOpen) {
@@ -28,11 +28,20 @@ export default function StoreView(props) {
     </div>
     )
 
+  const topBarInfo = (
+    <p className={styles.queries}>{query.length > 0 ? `Showing results for "${query}"` : `Showing all results`}</p>
+
+  ) 
+
+
   return (
+    <>
+    <div className={styles.topbar}>{topBarInfo}</div>
     <div className={styles.store_view}>
         {menuIsOpen && <ProductSidebar productData={props.productData}/>}
         {!menuIsOpen && sidebarIcon}
         <ProductList  productData={props.productData}/>
     </div>
+    </>
   )
 }
