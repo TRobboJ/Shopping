@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './ProductCard.module.scss'
 import Link from 'next/link';
-
+import { useSelector } from 'react-redux';
 
 export default function ProductCard(props) {
-    
+    const {menuIsOpen} = useSelector(state=>state.filter)
     const { productData } = props;
     const { id, title, description, price, imageUrl, rating, category } = productData
 
@@ -15,7 +15,7 @@ export default function ProductCard(props) {
 
     const content = (
         <div className={styles.product_card} key={id}>
-            <div className={styles.product_img}>
+            <div className={menuIsOpen ? [styles.product_img, styles.show_img].join(' ') : styles.product_img}>
                 <img src={imageUrl}/>
             </div>
             <div className={styles.product_info}>

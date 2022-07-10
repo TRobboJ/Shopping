@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  query: ''
+  query: '',
+  minPrice: 0,
+  maxPrice: Math.Infinity
 }
 
 export const fliterSlice = createSlice({
@@ -17,12 +19,20 @@ export const fliterSlice = createSlice({
     filterQuery: (state, action) => {
       state.query = action.payload.toString()
     },
+    setMinPrice: (state, action) => {
+      state.minPrice = parseInt(action.payload)
+    },
+    setMaxPrice: (state, action) => {
+      state.maxPrice = parseInt(action.payload)
+    },
     clearFilters: (state) => {
       state.query = ''
+      state.minPrice = 0
+      state.maxPrice = Math.Infinity
     }
   },
 })
 
-export const { openMenu, closeMenu, filterQuery, clearFilters, } = fliterSlice.actions
+export const { openMenu, closeMenu, filterQuery, clearFilters, setMaxPrice, setMinPrice } = fliterSlice.actions
 
 export default fliterSlice.reducer

@@ -8,10 +8,11 @@
 .sidebar_close_icon {
   color: base.$input-colour;
 
-  text-align: left;
-  top: 0;
+  text-align: right;
+//   top: 0;
+//   right: 0;
   z-index: 100;
-  padding: 0.2rem;
+  padding: 4px 0 0;
   opacity: 0.8;
 }
 
@@ -25,13 +26,17 @@
 }
 
 .header,
-.content {
+.content,
+.first_header {
   color: base.$input-colour;
   padding: 4px 16px 12px;
   line-height: 1.15;
 }
-.header {
+.header,
+.first_header {
   font-size: 1.15rem;
+}
+.header {    
   border-top: 1px solid base.$input-border;
 }
 .content {
@@ -48,7 +53,7 @@
 .price_input {
   input {
     @include input-theme;
-    max-width: 30%;
+    max-width: 50%;
   }
   span,
   input {
@@ -73,10 +78,23 @@
 .reset {
   input {
     @include input-theme;
-    max-width: 30%;
+    max-width: 60%;
   }
   input:hover {
     color: base.$highlight-colour;
     border-color: base.$highlight-colour;
   }
+}
+
+@media (min-width: 768px) {
+    .price_input {
+        input {
+            max-width: 30%;
+        }
+    }
+    .reset {
+        input {
+            max-width: 40%;
+        }
+    }
 }

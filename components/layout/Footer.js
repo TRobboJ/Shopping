@@ -10,10 +10,13 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.information}>
-        <ImGithub />
+        <a href='https://github.com/TRobboJ' >
+          <ImGithub />
+          <p>View the code on GitHub!</p>
+        </a>
         
       </div>
-      <p>{`© Thomas Robinson ${currentYear}`}</p>
+      <p>{`© Created by Thomas Robinson ${currentYear}`}</p>
     </footer>
   )
 }
