@@ -6,11 +6,12 @@ import { useSelector } from "react-redux";
 export default function ProductList(props) {
   const { query } = useSelector((state) => state.filter);
 
-  // const noResultsFound = <p className={styles.no_results}>No results found.</p>;
+  const queryLowerCase = query.toLowerCase()
 
   const products = props.productData.map((product) => {
-    const filteredTitle = product.title.toLowerCase().includes(query)
-    if (!filteredTitle) return null
+    const filteredTitle = product.title.toLowerCase().includes(queryLowerCase)
+    const filteredCategory = product.category.toLowerCase().includes(queryLowerCase)
+    if (!filteredTitle && !filteredCategory) return null
     return (
       <li>
         <Product productData={product} />

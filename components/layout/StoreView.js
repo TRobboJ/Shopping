@@ -30,7 +30,7 @@ export default function StoreView(props) {
 
   return (
     <div className={styles.store_view}>
-        {menuIsOpen && <ProductSidebar />}
+        {menuIsOpen && <ProductSidebar productData={props.productData}/>}
         {!menuIsOpen && sidebarIcon}
         <ProductList  productData={props.productData}/>
     </div>

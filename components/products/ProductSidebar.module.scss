@@ -40,6 +40,13 @@
 .content {
     font-size: 1rem;
 }
+.content ul li {
+    margin-bottom: 0.5rem;
+}
+.content ul li:hover {
+    color: base.$highlight-colour;
+    cursor: pointer;
+}
 
 .price_input {
     
