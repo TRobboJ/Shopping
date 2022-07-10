@@ -3,6 +3,9 @@
 }
 
 .card:hover {
-    cursor: pointer;
-    transform: translateY(-5%);
+    transform: translateY(-1%);
+}
+
+.list_item {
+    height: 100%;
 }

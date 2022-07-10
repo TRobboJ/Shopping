@@ -5,11 +5,15 @@
     display: flex;
     padding: 1rem;
     font-family: base.$font-stack-body;
+    background-color: base.$tone-secondary-colour;
 }
 .product_img {
     display: flex;
     flex: 0.75;
     min-width: 40%;
+    min-height: 40%;
+    // background-color: base.$tone-colour;
+    // padding: 0.5rem;
 }
 
 .product_img img {
@@ -25,7 +29,7 @@
 .product_info h3{
     padding: 0;
 }
-.product_info p{
+.product_info .price{
     font-size: 1.2rem;
     color: base.$price-colour;
 }
@@ -42,6 +46,11 @@
     font-size: 1.1rem;
 }
 
+.product_detail {
+    cursor: pointer;
+    color: base.$highlight-colour;
+}
+
 
 @media (min-width: 480px) {
     .product_img {
@@ -54,5 +63,19 @@
    
     .product_img {
         min-width: 40%;
+        
+    }
+}
+
+@media (min-width: 1280px) {
+    .product_card {
+        display: block;
+        max-width: 290px;
+        max-height: 550px;
+        height: 100%;
+    }
+    .product_img {
+        max-height: 40%;
+        
     }
 }

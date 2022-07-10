@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { openMenu, closeMenu } from '../../store/filterSlice'
 import {TbLayoutSidebarLeftExpand} from 'react-icons/tb'
 
-export default function StoreView() {
+export default function StoreView(props) {
   const dispatch = useDispatch()
   const {menuIsOpen} = useSelector(state=>state.filter)
   const iconSize = `40px`
@@ -32,7 +32,7 @@ export default function StoreView() {
     <div className={styles.store_view}>
         {menuIsOpen && <ProductSidebar />}
         {!menuIsOpen && sidebarIcon}
-        <ProductList />
+        <ProductList  productData={props.productData}/>
     </div>
   )
 }

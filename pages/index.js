@@ -5,7 +5,6 @@ import Footer from '../components/layout/Footer'
 
 function HomePage(props) {
   
-  
 
   return (
       <>
@@ -16,7 +15,7 @@ function HomePage(props) {
       })}
       <img src={props.productData[1].imageUrl} /> */}
         {/* <Hero /> */}
-        <StoreView />
+        <StoreView productData={props.productData}/>
       </>
       
    
@@ -26,30 +25,31 @@ function HomePage(props) {
 export default HomePage;
 
 
-// export async function getStaticProps() {
+export async function getStaticProps() {
 
 
   
-//     const response = await fetch(process.env.STORE_API)
-//     const productData = await response.json()
-    
+    const response = await fetch(process.env.STORE_API)
+    const productData = await response.json()
+ 
 
 
-//   return {
-//     props: {      
-//       productData: productData.map((product) => ({
-//         id: product.id.toString(),
-//         title: product.title,
-//         price: product.price,
-//         description: product.description,
-//         category: product.category,
-//         imageUrl: product.image,
-//         rating: product.rating,
-//       }))
-//     }
-//   }
+  return {
+    props: {      
+      productData: productData.map((product) => ({
+        id: product.id.toString(),
+        title: product.title,
+        price: product.price,
+        description: product.description,
+        category: product.category,
+        imageUrl: product.image,
+        rating: product.rating,
+      }))
+    }
+  }
     
-// }
+}
+
 
 //Example of response from server
 // {"id":1,

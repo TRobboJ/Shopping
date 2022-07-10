@@ -1,13 +1,16 @@
 @use '../../styles/base.scss';
+@import '../../styles/mixins.scss';
+
+
 
 
 .sidebar {
-   min-width: 30%;
+   max-width: 30%;
 }
 
 .sidebar_close_icon {
-    color: base.$primary-colour;
-    position: sticky;
+    color: base.$input-colour;
+    
     text-align: left;
     top: 0;
     z-index: 100;
@@ -19,4 +22,46 @@
     color: base.$highlight-colour;
     cursor: pointer;
 }
+.search_content {
+    position: sticky;
+    top: 0;
+}
 
+.header,
+.content {
+    color: base.$input-colour;
+    padding: 4px 16px 12px;
+    line-height: 1.15;
+}
+.header {
+    font-size: 1.15rem;
+    border-top: 1px solid base.$input-border;
+}
+.content {
+    font-size: 1rem;
+}
+
+.price_input {
+    
+    input {
+        @include input-theme;
+        max-width: 30%;
+    }
+    span,
+    input {
+        margin: 0 1rem 0 0;
+    }
+}
+.query_input {
+    input {
+        @include input-theme;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+.reset {
+    input {
+        @include input-theme;
+        max-width: 30%;
+    }
+}

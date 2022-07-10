@@ -9,6 +9,15 @@
     border-radius: 10px;
   }
 
+  @mixin input-theme($bg: base.$tone-secondary-colour, $text: base.$input-colour,  $border: base.$input-border) {
+    font: inherit;
+    background-color: $bg;
+    color: $text;
+    border: 1px solid $border;
+    border-radius: 3px;
+    padding: 6px 10px;
+  }
+
  
   
 //   .info {

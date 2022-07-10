@@ -1,27 +1,45 @@
 import React from 'react'
 import styles from './ProductCard.module.scss'
+import Link from 'next/link';
+
 
 export default function ProductCard(props) {
+    
+    const { productData } = props;
+    const { id, title, description, price, imageUrl, rating, category } = productData
 
-    const DUMMY_DATA = props.productData
-  return (
-        <div className={styles.product_card}>
+    const priceFormatted = `$${price.toFixed(2)}`
+    const categoryFormatted = category.charAt(0).toUpperCase() + category.slice(1)
+
+    
+
+    const content = (
+        <div className={styles.product_card} key={id}>
             <div className={styles.product_img}>
-                <img src={DUMMY_DATA[0].image}/>
+                <img src={imageUrl}/>
             </div>
             <div className={styles.product_info}>
-                <h3>{DUMMY_DATA[0].title}</h3>
-                <p>{`$${DUMMY_DATA[0].price.toFixed(2)}`}</p>
+                <h3>{title}</h3>
+                <p>{categoryFormatted}</p>
+                <p className={styles.price}>{priceFormatted}</p>
                 <div className={styles.tags}>
-                    <span>{`★ ${DUMMY_DATA[0].rating.rate}`}</span>
-                    <span>{`🗨 ${DUMMY_DATA[0].rating.count}`}</span>
+                    <span>{`★ ${rating.rate} (${rating.count})`}</span>
                 </div>
-                
+                <div>
+                <Link href={`/products/${id}`}>
+                <p className={styles.product_detail}>See more...</p>
+                </Link>
+            </div>
             </div>
             
             
             
 
-        </div>
+        </div>)
+        
+
+  return (
+    content
+        
   )
 }
