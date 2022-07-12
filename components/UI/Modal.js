@@ -5,7 +5,7 @@ import Portal from '../hoc/Portal'
 
 
 
-function BackdropOverlay(props) {
+function BackdropOverlay() {
     return <div className={styles.overlay}></div>
 }
 

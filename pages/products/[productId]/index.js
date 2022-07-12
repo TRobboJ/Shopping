@@ -1,23 +1,21 @@
 import React from 'react'
-import ProductCard from '../../../components/products/ProductCard'
+import ProductDetail from '../../../components/products/ProductDetail'
 
-export default function ProductDetail(props) {
+export default function index(props) {
   
   return (
-    <ProductCard productData={props.productData} />
+    <ProductDetail productData={props.productData} />
   )
 }
 
 
 export async function getStaticPaths() {
 
-  // const {productId} = context.params
   const response = await fetch(process.env.STORE_API)
   const productData = await response.json()
-  // const allProducts = productData.find({}, {id: 1}).toArray()
 
   return {
-    fallback: true,
+    fallback: false,
     paths: productData.map(product=> ({params: {productId: product.id.toString()}}))
     
     

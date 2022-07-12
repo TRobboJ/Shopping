@@ -2,7 +2,7 @@ import styles from './CartButton.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleCart } from '../../store/cartSlice';
 
-const CartButton = (props) => {
+const CartButton = () => {
   const dispatch = useDispatch()
 
   // const cartQuantity = useSelector(state=>state.cart.totalQuantity)
