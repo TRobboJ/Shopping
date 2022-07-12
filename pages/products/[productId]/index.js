@@ -11,18 +11,16 @@ export default function ProductDetail(props) {
 
 export async function getStaticPaths() {
 
-
+  // const {productId} = context.params
+  const response = await fetch(process.env.STORE_API)
+  const productData = await response.json()
+  // const allProducts = productData.find({}, {id: 1}).toArray()
 
   return {
     fallback: true,
-    paths: [
-      {params: {
-        productId: '1'
-      }},
-      {params: {
-        productId: '2'
-      }}
-    ]
+    paths: productData.map(product=> ({params: {productId: product.id.toString()}}))
+    
+    
   }
 
 
