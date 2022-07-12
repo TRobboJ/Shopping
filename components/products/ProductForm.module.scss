@@ -1,0 +1,14 @@
+@use '../../styles/base.scss';
+@use '../../styles/mixins.scss';
+  
+  .form button {
+    @include mixins.button-theme($theme: base.$body-colour, $border: base.$primary-colour);
+    font-weight: 600;
+    padding: 0.3em 0.7em;
+    margin: 0.4rem 0;
+  }
+  
+  .form button:hover,
+  .form button:active {
+    background-color: base.$tertiary-colour;
+  }

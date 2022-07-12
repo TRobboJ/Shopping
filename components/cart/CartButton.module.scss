@@ -1,4 +1,5 @@
   @use '../../styles/base.scss';
+  @use '../../styles/mixins.scss';
   
   .button span {
     margin: 0 0.5rem;
@@ -20,4 +21,14 @@
     color: base.$secondary-colour;
    }
   }
- 
+
+  .button {
+    @include mixins.button-theme;
+    padding: 0.5rem 1rem;
+  }
+  
+  .button:hover,
+  .button:active {
+    @include mixins.button-theme($theme: base.$secondary-colour, $border: base.$primary-colour);
+  }
+  

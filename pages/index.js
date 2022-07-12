@@ -1,13 +1,16 @@
 import Hero from "../components/layout/Hero";
 import StoreView from "../components/layout/StoreView";
-import styles from './index.module.scss'
-import Footer from '../components/layout/Footer'
+
+import Cart from "../components/cart/Cart";
+import { useSelector } from "react-redux";
 
 function HomePage(props) {
-  
+  const  {cartIsOpen}  = useSelector(state=>state.cart)
 
   return (
+
       <>
+      {cartIsOpen && <Cart /> }
       {/* <div>Welcome to Next.js!</div>
       <p>{props.productData[1].title}</p>
       {props.productData.map((product)=> {

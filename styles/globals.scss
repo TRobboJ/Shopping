@@ -1,5 +1,4 @@
 @use './base.scss';
-@use './mixins.scss';
 
 
 html,
@@ -25,15 +24,6 @@ ul {
   box-sizing: border-box;
 }
 
-button {
-  @include mixins.button-theme;
-  padding: 0.5rem 1rem;
-}
-
-button:hover,
-button:active {
-  @include mixins.button-theme($theme: base.$secondary-colour, $border: base.$primary-colour);
-}
 
 
 

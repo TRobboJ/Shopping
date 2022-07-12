@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './ProductCard.module.scss'
+import ProductForm from './ProductForm';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
@@ -26,6 +27,7 @@ export default function ProductCard(props) {
                     <span>{`★ ${rating.rate} (${rating.count})`}</span>
                 </div>
                 <div>
+                <ProductForm />
                 <Link href={`/products/${id}`}>
                 <p className={styles.product_detail}>See more...</p>
                 </Link>
