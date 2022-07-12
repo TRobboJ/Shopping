@@ -14,7 +14,7 @@ export default function ProductList(props) {
     const {price} = product
     if (!filteredTitle && !filteredCategory || (price < minPrice || price > maxPrice)) return null
     return (
-      <li>
+      <li key={product.id}>
         <Product productData={product} />
       </li>
     );

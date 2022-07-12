@@ -4,6 +4,8 @@
     width: 100%;
     min-height: 10rem;
     background-color: base.$body-contrast;
+    // position: fixed;
+    // bottom: 0;
 }
 .footer > p {
     color: base.$body-colour;
@@ -19,6 +21,7 @@
 .information a {    
     align-items: center;
     display: flex;
+    width: 80%;
 }
 .information a:hover {  
     color: base.$highlight-colour;

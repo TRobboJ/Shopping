@@ -1,13 +1,20 @@
 import React from 'react'
-import styles from './Hero.module.css'
+import styles from './Hero.module.scss'
+import Image from 'next/image'
+import heroImg from '../../public/hero-img.jpg'
 
 export default function Hero() {
   return (
-    <div className={styles.hero}>
-        <img 
-        src='https://cdn.shopify.com/s/files/1/0068/9206/0724/files/home-hero-new-products-desktop_04e25385-5170-455f-8bb8-a843b1384574.jpg?v=1653600627'
-        />
-
+    <div className={styles.hero}>      
+      <Image
+      src={heroImg}
+      alt="Hero image for shopping website"
+      // width="350px"
+      // height="300px"
+    />
+    <div className={styles.attribution}>
+      <a href='https://www.freepik.com/vectors/3d-shop'>3d shop vector created by bs_k1d - www.freepik.com</a>
+    </div>
     </div>
   )
 }

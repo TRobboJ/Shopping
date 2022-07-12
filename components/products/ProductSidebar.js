@@ -99,9 +99,9 @@ export default function ProductSidebar(props) {
         </div>
         <div className={styles.content}>
           <div className={styles.price_input}>
-            <input type="number" placeholder="$" name="min" maxlength="6" onChange={filterMinPriceHandler} ref={minPriceRef}/>
+            <input type="number" placeholder="$" name="min" maxLength="6" onChange={filterMinPriceHandler} ref={minPriceRef}/>
             <span>~</span>
-            <input type="number" placeholder="$" name="max" maxlength="6" onChange={filterMaxPriceHandler} ref={maxPriceRef}/>
+            <input type="number" placeholder="$" name="max" maxLength="6" onChange={filterMaxPriceHandler} ref={maxPriceRef}/>
           </div>
         </div>
 
