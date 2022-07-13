@@ -3,15 +3,28 @@ import styles from "./Product.module.scss";
 import Link from "next/link";
 import { AiFillStar } from "react-icons/ai";
 import ProductForm from "./ProductForm";
+import { addItemToCart } from "../../store/cartSlice";
+import { useDispatch } from "react-redux";
 
 export default function Product(props) {
+  const dispatch = useDispatch()
   const { link, linkText, showDescription } = props.renderInfo;
-  const { title, description, price, rating, category } = props.productData;
+  const { id, title, description, price, rating, category, imageUrl } = props.productData;
+
 
   const priceFormatted = `$${price.toFixed(2)}`;
   const categoryFormatted =
     category.charAt(0).toUpperCase() + category.slice(1);
 
+    function addItemToCartHandler(event) {
+      event.preventDefault()
+      dispatch(addItemToCart({
+        id,
+        price,
+        title,
+        imageUrl
+      }))
+    }
   return (
     <div className={styles.product_info}>
       <h3>{title}</h3>
@@ -25,7 +38,7 @@ export default function Product(props) {
         {showDescription && (
           <p className={styles.product_description}>{description}</p>
         )}
-        <ProductForm />
+        <ProductForm buttonHandler={addItemToCartHandler}/>
         <Link href={`/products/${link}`}>
           <a className={styles.product_detail}>{linkText}</a>
         </Link>

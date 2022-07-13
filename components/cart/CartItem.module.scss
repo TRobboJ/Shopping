@@ -1,0 +1,29 @@
+@use "../../styles/base.scss";
+
+.cart_item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 0px;
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid base.$input-border;
+}
+
+.image_resize {
+  display: flex;
+  max-width: 100px;
+  align-items: center;
+}
+.image_resize img {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+}
+.spacing {
+  h4:not(:nth-child(2)),
+  p + p {
+    margin-left: 1rem;
+  }
+}

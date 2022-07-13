@@ -2,22 +2,20 @@
   @use '../../styles/mixins.scss';
   
   .button span {
-    margin: 0 0.5rem;
+    margin: 0 0.4rem;
     text-transform: uppercase;
   }
   
   .badge {
     background-color: base.$secondary-colour;
     border-radius: 30px;
-    padding: 0.15rem 1.25rem;
+    padding: 0.25rem 0.75rem;
     color: base.$primary-colour;
   }
 
   .button:hover {
     .badge {
     background-color: base.$primary-colour;
-    border-radius: 30px;
-    padding: 0.15rem 1.25rem;
     color: base.$secondary-colour;
    }
   }
