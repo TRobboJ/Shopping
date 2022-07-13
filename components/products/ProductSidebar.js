@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import styles from "./ProductSidebar.module.scss";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -8,9 +8,12 @@ import {
   filterQuery,
   clearFilters,
   setMaxPrice,
-  setMinPrice
+  setMinPrice,
+  setRating
 } from "../../store/filterSlice";
 import { FaRegWindowClose } from "react-icons/fa";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import StarRating from "../layout/StarRating";
 
 export default function ProductSidebar(props) {
   const dispatch = useDispatch();
@@ -46,29 +49,39 @@ export default function ProductSidebar(props) {
     if (query === 0) query = event.target.innerText;
     dispatch(filterQuery(query));
   }
-  
-  function filterMinPriceHandler(event) {
-    let minPrice = event.target.value
-    if (minPrice <= 0) return
-    dispatch(setMinPrice(minPrice))
+
+  function filterMinPriceHandler(event) {    
+    if (event.target.value < 0) return;
+    let minPrice
+    if (event.target.value === '' || event.target.value === null || event.target.value === 0) {minPrice = 0}
+    if (event.target.value > 0) {minPrice = event.target.value}
+    dispatch(setMinPrice(minPrice));
   }
 
   function filterMaxPriceHandler(event) {
-    let maxPrice = event.target.value
-    if (maxPrice <= 0) return
-    dispatch(setMaxPrice(maxPrice))
+    if (event.target.value < 0) return;
+    let maxPrice
+    if (event.target.value === '' || event.target.value === null || event.target.value === 0) {maxPrice = Math.Infinity}
+    if (event.target.value > 0) {maxPrice = event.target.value}
+    dispatch(setMaxPrice(maxPrice));
+  }
+
+  function filterRatingHandler(event) {
+    if (!event.target.id) return
+    const ratingQuery = event.target.id
+    dispatch(setRating(ratingQuery))
   }
 
   function clearAllFiltersHandler() {
     dispatch(clearFilters());
-    minPriceRef.current.value = ''
-    maxPriceRef.current.value = ''
-    searchRef.current.value = ''
+    minPriceRef.current.value = "";
+    maxPriceRef.current.value = "";
+    searchRef.current.value = "";
   }
 
-  const minPriceRef = useRef()
-  const maxPriceRef = useRef()
-  const searchRef = useRef()
+  const minPriceRef = useRef();
+  const maxPriceRef = useRef();
+  const searchRef = useRef();
 
   return (
     <div className={styles.sidebar}>
@@ -99,23 +112,31 @@ export default function ProductSidebar(props) {
         </div>
         <div className={styles.content}>
           <div className={styles.price_input}>
-            <input type="number" placeholder="$" name="min" maxLength="6" onChange={filterMinPriceHandler} ref={minPriceRef}/>
+            <input
+              type="number"
+              placeholder="$"
+              name="min"
+              maxLength="6"
+              onChange={filterMinPriceHandler}
+              ref={minPriceRef}
+            />
             <span>~</span>
-            <input type="number" placeholder="$" name="max" maxLength="6" onChange={filterMaxPriceHandler} ref={maxPriceRef}/>
+            <input
+              type="number"
+              placeholder="$"
+              name="max"
+              maxLength="6"
+              onChange={filterMaxPriceHandler}
+              ref={maxPriceRef}
+            />
           </div>
         </div>
 
         <div className={styles.header}>
           <label>Reviews</label>
         </div>
-        <div className={styles.content}>
-          <div className={styles.reset}>
-            <input
-              type="reset"
-              value="Reset"
-              onClick={clearAllFiltersHandler}
-            />
-          </div>
+        <div className={styles.content} onClick={filterRatingHandler}>            
+            <StarRating />
         </div>
 
         <div className={styles.header}>

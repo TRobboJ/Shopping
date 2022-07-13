@@ -1,28 +1,35 @@
 import React from "react";
-import styles from "./Product.module.css";
-import Card from "../UI/Card";
+import styles from "./Product.module.scss";
 import Link from "next/link";
-import ProductCard from "./ProductCard";
-
-const DUMMY_DATA = [
-  {
-    id: 1,
-    title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    price: 109.95,
-    description:
-      "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    category: "men's clothing",
-    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    rating: { rate: 3.9, count: 120 },
-  },
-];
+import { AiFillStar } from "react-icons/ai";
+import ProductForm from "./ProductForm";
 
 export default function Product(props) {
+  const { link, linkText, showDescription } = props.renderInfo;
+  const { title, description, price, rating, category } = props.productData;
+
+  const priceFormatted = `$${price.toFixed(2)}`;
+  const categoryFormatted =
+    category.charAt(0).toUpperCase() + category.slice(1);
+
   return (
-    
-      <Card className={[styles.card, styles.list_item].join(' ')}>
-          <ProductCard productData={props.productData} />
-      </Card>
-    
-  )
+    <div className={styles.product_info}>
+      <h3>{title}</h3>
+      <p>{categoryFormatted}</p>
+      <p className={styles.price}>{priceFormatted}</p>
+      <div className={styles.tags}>
+        <AiFillStar />
+        <span>{`${rating.rate} (${rating.count})`}</span>
+      </div>
+      <div>
+        {showDescription && (
+          <p className={styles.product_description}>{description}</p>
+        )}
+        <ProductForm />
+        <Link href={`/products/${link}`}>
+          <a className={styles.product_detail}>{linkText}</a>
+        </Link>
+      </div>
+    </div>
+  );
 }

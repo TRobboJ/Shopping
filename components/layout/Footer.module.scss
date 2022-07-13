@@ -1,27 +1,27 @@
 @use '../../styles/base.scss';
 
 .footer {
-    width: 100%;
-    min-height: 10rem;
-    background-color: base.$body-contrast;
+    background-color: base.$tertiary-colour;
+    // width: 100%;
+    // min-height: 10rem;
+    
     // position: fixed;
     // bottom: 0;
 }
-.footer > p {
-    color: base.$body-colour;
-    padding-left: 1rem;
-}
+
 .footer .information {
     display: flex;
     color: base.$body-contrast;
-    background-color: base.$tertiary-colour;
     min-height: 7rem;
     align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
 }
 .information a {    
     align-items: center;
     display: flex;
     width: 80%;
+    justify-content: center;
 }
 .information a:hover {  
     color: base.$highlight-colour;
@@ -30,4 +30,15 @@
     font-size: 2rem;
     margin: 1rem;
     
+}
+.copy {
+    width: 100%;
+    color: base.$body-colour;
+    background-color: base.$body-contrast;
+    padding: 1.1rem 0 1.1rem 1rem;
+}
+.copy p {
+    margin: 0;
+    padding: 0;
+    font-size:0.8rem;
 }

@@ -1,86 +1,53 @@
-@use '../../styles/base.scss';
+@use "../../styles/base.scss";
 
 .product_card {
-    // height: 14rem;
-    display: flex;
-    padding: 1rem;
-    font-family: base.$font-stack-body;
-    background-color: base.$tone-secondary-colour;
+  // height: 14rem;
+  display: flex;
+  padding: 1rem;
+  font-family: base.$font-stack-body;
+  background-color: base.$tone-secondary-colour;
 }
 .product_img {
-    display: flex;
-    flex: 0.75;
-    min-width: 40%;
-    min-height: 40%;
-    // background-color: base.$tone-colour;
-    // padding: 0.5rem;
+  display: flex;
+  flex: 0.75;
+  min-width: 40%;
+  min-height: 40%;
+  // background-color: base.$tone-colour;
+  // padding: 0.5rem;
 }
-
 
 .product_img img {
-    height: auto;
-    width: 100%;
-    vertical-align: middle;
+  height: auto;
+  width: 100%;
+  vertical-align: middle;
 }
 
-.product_info {
-    padding: 0.5rem 0 0.5rem 1rem;
-    font-weight: 500;
-}
-.product_info h3{
-    padding: 0;
-}
-.product_info .price{
-    font-size: 1.2rem;
-    color: base.$price-colour;
-}
-.tags {
-    display: flex;
-    
-}
-.tags span {
-    align-items: center;
-    padding: 0.2em 0.4em 0.2em 0;
-    border-radius: 16px;
-    text-align: center;
-    margin-right: 1rem;
-    font-size: 1.1rem;
-}
-
-.product_detail {
-    cursor: pointer;
-    color: base.$highlight-colour;
-}
 @media (max-width: 580px) {
-    .show_img {
-        display: none;
-    }
+  .show_img {
+    display: none;
+  }
 }
 
 @media (min-width: 480px) {
-    .product_img {
-        min-width: 30%;
-    }
-    
+  .product_img {
+    min-width: 45%;
+  }
 }
 
 @media (min-width: 768px) {
-   
-    .product_img {
-        min-width: 40%;
-        
-    }
+  .product_img {
+    min-width: 40%;
+  }
 }
 
 @media (min-width: 980px) {
-    .product_card {
-        display: block;
-        max-width: 290px;
-        max-height: 550px;
-        height: 100%;
-    }
-    .product_img {
-        max-height: 40%;
-        
-    }
+  .product_card {
+    display: block;
+    max-width: 290px;
+    max-height: 550px;
+    height: 100%;
+  }
+  .product_img {
+    max-height: 40%;
+  }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import {ImGithub} from 'react-icons/im'
+import {BsFileEarmarkPersonFill} from 'react-icons/bs'
 import styles from './Footer.module.scss'
 
 export default function Footer() {
@@ -14,9 +15,15 @@ export default function Footer() {
           <ImGithub />
           <p>View the code on GitHub!</p>
         </a>
-        
+        <a href='https://thomas-robinson.netlify.app/' >
+          <BsFileEarmarkPersonFill />
+          <p>Return to my portfolio!</p>
+        </a>
       </div>
-      <p>{`© Created by Thomas Robinson ${currentYear}`}</p>
+      <div className={styles.copy}>
+       <p>{`© Created by Thomas Robinson ${currentYear}`}</p>
+      </div>
+      
     </footer>
   )
 }

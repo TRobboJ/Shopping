@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   query: '',
   minPrice: 0,
-  maxPrice: Math.Infinity
+  maxPrice: Math.Infinity,
+  ratingQuery: 0,
 }
 
 export const fliterSlice = createSlice({
@@ -25,14 +26,18 @@ export const fliterSlice = createSlice({
     setMaxPrice: (state, action) => {
       state.maxPrice = parseInt(action.payload)
     },
+    setRating: (state, action) => {
+      state.ratingQuery = parseInt(action.payload)
+    },
     clearFilters: (state) => {
       state.query = ''
       state.minPrice = 0
       state.maxPrice = Math.Infinity
+      state.ratingQuery = 0      
     }
   },
 })
 
-export const { openMenu, closeMenu, filterQuery, clearFilters, setMaxPrice, setMinPrice } = fliterSlice.actions
+export const { openMenu, closeMenu, filterQuery, clearFilters, setMaxPrice, setMinPrice, setRating } = fliterSlice.actions
 
 export default fliterSlice.reducer

@@ -8,7 +8,7 @@ import {TbLayoutSidebarLeftExpand} from 'react-icons/tb'
 
 export default function StoreView(props) {
   const dispatch = useDispatch()
-  const {menuIsOpen, query} = useSelector(state=>state.filter)
+  const {menuIsOpen, query, minPrice, maxPrice, ratingQuery} = useSelector(state=>state.filter)
   const iconSize = `30px`
 
   function toggleFilter() {
@@ -28,10 +28,7 @@ export default function StoreView(props) {
     </div>
     )
 
-  const topBarInfo = (
-    <p className={styles.queries}>{query.length > 0 ? `Showing results for "${query}"` : `Showing all results`}</p>
-
-  ) 
+  const topBarInfo = getTopBarInfo(props.productData, query, minPrice, maxPrice, ratingQuery)
 
 
   return (
@@ -44,4 +41,41 @@ export default function StoreView(props) {
     </div>
     </>
   )
+}
+
+
+function getTopBarInfo(productArray, searchQuery, minPrice, maxPrice, ratingQuery) {
+  let output = []
+  //This is the default value to be returned to the topbar
+  const noFilters = `Showing all results (${productArray.length} products)`
+
+  let filtersExist = false
+  let filterOutput = []
+  let concatFilterOutput
+
+  //First I wanted to check if any filters are being applied
+  if (searchQuery.length > 0 || minPrice > 0 || maxPrice !== Math.Infinity || ratingQuery > 0) {
+
+    filtersExist = true
+
+    //Check each filter individually and if they are being appplied push them to the filterOutput array
+    if (searchQuery.length > 0) {filterOutput.push(`'${searchQuery}'`)}
+
+    //In the case that both a minPrice AND a maxPrice filter are being set, I wanted to render them together ex. $1 ~ $100
+    if (minPrice > 0 && maxPrice > 0) {filterOutput.push(`$${minPrice} ~ $${maxPrice}`)}
+    //If only minPrice or maxPrice filters are applied than I opted to use < and > 
+    else {
+        if (minPrice > 0) {filterOutput.push(`>$${minPrice}`)}
+        if (maxPrice > 0) {filterOutput.push(`<$${maxPrice}`)}
+      }
+    if (ratingQuery > 0) {filterOutput.push(`>★${ratingQuery}`)}
+  }
+  //In the case that more than one filter is being applied I wanted to concat that array with commas, and use 'and' for the final filter
+  if (filterOutput.length > 1) {concatFilterOutput = `${filterOutput.slice(0, -1).join(', ')} and ${filterOutput.slice(-1)}`}
+  if (filterOutput.length === 1) {concatFilterOutput = filterOutput}
+  
+
+  output.push(<p className={styles.queries}>{filtersExist ? `Showing results for ${concatFilterOutput}.` : noFilters}</p>)
+
+  return output
 }

@@ -1,0 +1,28 @@
+@use '../../styles/base.scss';
+
+
+
+.section {
+    background-color: base.$body-colour; 
+    padding: 2rem 0;
+    font-family: base.$font-stack-body;
+    h2,
+    p {
+        max-width: 80%;
+        margin: 1rem auto;
+        text-align: center;
+    }
+    h2 {
+        padding-top: 1rem;
+        border-top: 1px solid base.$highlight-colour;
+    }
+}
+.icons {
+    padding: 0 1rem;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    > div {
+        padding: 0.4rem 0;
+    }
+}

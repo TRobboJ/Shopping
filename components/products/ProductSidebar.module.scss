@@ -9,8 +9,8 @@
   color: base.$input-colour;
 
   text-align: right;
-//   top: 0;
-//   right: 0;
+  //   top: 0;
+  //   right: 0;
   z-index: 100;
   padding: 4px 0 0;
   opacity: 0.8;
@@ -36,7 +36,7 @@
 .first_header {
   font-size: 1.15rem;
 }
-.header {    
+.header {
   border-top: 1px solid base.$input-border;
 }
 .content {
@@ -86,15 +86,27 @@
   }
 }
 
+// .rating { 
+//   display: flex;
+//   align-items: center;
+// }
+// .rating:hover {
+//   color: base.$highlight-colour;
+//   cursor: pointer;
+// }
+// .rating_selected {
+//   color: base.$highlight-colour;
+// }
+
 @media (min-width: 768px) {
-    .price_input {
-        input {
-            max-width: 30%;
-        }
+  .price_input {
+    input {
+      max-width: 30%;
     }
-    .reset {
-        input {
-            max-width: 40%;
-        }
+  }
+  .reset {
+    input {
+      max-width: 40%;
     }
+  }
 }

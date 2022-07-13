@@ -1,0 +1,42 @@
+@use "../../styles/base.scss";
+
+.card {
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-1%);
+}
+
+.list_item {
+  height: 100%;
+}
+
+.product_info {
+  padding: 0.5rem 0 0.5rem 1rem;
+  font-weight: 500;
+}
+.product_info h3 {
+  padding: 0;
+}
+.product_info .price {
+  font-size: 1.2rem;
+  color: base.$price-colour;
+}
+.tags {
+  display: flex;
+  align-items: center;
+}
+.tags span {
+  align-items: start;
+  padding: 0.2em 0.4em 0.2em 0;
+  border-radius: 16px;
+  text-align: center;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+
+.product_detail {
+  cursor: pointer;
+  color: base.$highlight-colour;
+}

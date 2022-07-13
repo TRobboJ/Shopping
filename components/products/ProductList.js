@@ -1,26 +1,36 @@
 import React from "react";
-import Product from "./Product";
-import styles from "./ProductList.module.css";
+import ProductCard from "./ProductCard";
+import styles from "./ProductList.module.scss";
 import { useSelector } from "react-redux";
 
 export default function ProductList(props) {
-  const { query, minPrice, maxPrice } = useSelector((state) => state.filter);
+  const { query, minPrice, maxPrice, ratingQuery } = useSelector(
+    (state) => state.filter
+  );
 
-  const queryLowerCase = query.toLowerCase()
+  const queryLowerCase = query.toLowerCase();
+  const categoryQuery = query.charAt(0).toUpperCase() + query.slice(1);
 
   const products = props.productData.map((product) => {
-    const filteredTitle = product.title.toLowerCase().includes(queryLowerCase)
-    const filteredCategory = product.category.toLowerCase().includes(queryLowerCase)
-    const {price} = product
-    if (!filteredTitle && !filteredCategory || (price < minPrice || price > maxPrice)) return null
+    const categoryToUpper =
+      product.category.charAt(0).toUpperCase() + product.category.slice(1);
+    const filteredTitle = product.title.toLowerCase().includes(queryLowerCase);
+    const filteredCategory = categoryToUpper.includes(categoryQuery);
+    const rateAsInt = parseInt(product.rating.rate);
+    const { price } = product;
+    if (!filteredTitle && !filteredCategory) return null;
+    // if (!filteredCategory) return null // Doesn't work because I use the same query for search and category
+    if (price < minPrice || price > maxPrice) return null;
+    if (rateAsInt < ratingQuery) return null;
     return (
       <li key={product.id}>
-        <Product productData={product} />
+        <ProductCard productData={product} />
       </li>
     );
   });
-  
-  if (products.every(el=> el === null)) return <p className={styles.no_results}>No results found.</p>;
+
+  if (products.every((el) => el === null))
+    return <p className={styles.no_results}>No results found.</p>;
   return (
     <>
       {

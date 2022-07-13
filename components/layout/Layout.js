@@ -1,16 +1,23 @@
 import NavBar from './navigation/NavBar';
 import Footer from './Footer';
-import styles from './Layout.module.css';
+import styles from './Layout.module.scss';
 
 function Layout(props) {
   return (
-    <div className={styles.layout}>
-      <NavBar />
-      <main>{props.children}
-      </main>
+    // <div className={styles.layout}>
+    //   <NavBar />
+    //   <main>{props.children}
+    //   </main>
       
-      <Footer />
-    </div>
+    //   <Footer />
+    // </div>
+    <>
+    <NavBar />
+    <main>{props.children}
+    </main>
+    
+    <Footer />
+    </>
   );
 }
 
