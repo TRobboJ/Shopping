@@ -1,0 +1,70 @@
+@use '../../styles/base.scss';
+@use '../../styles/mixins.scss';
+
+.cart {
+    max-width: 30rem;
+    background-color: base.$price-colour;
+    color: white;
+  }
+  
+  .cart h2 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+  }
+  
+  .cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+
+  .cart-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 20rem;
+    overflow: auto;
+  }
+  
+  .total_cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 1rem 1rem 1rem 0;
+    color: base.$price-colour;
+  }
+  
+  .modal_actions {
+    text-align: right;
+  }
+  
+  .modal_actions button {
+    padding: 0.5rem 1.8rem;
+    margin-left: 1rem;
+    font-weight: 500;
+  }
+
+  .modal_actions .modal_close {
+    @include mixins.button-theme($theme: base.$body-colour, $border: base.$primary-colour);
+  }
+  
+  .modal_actions .modal_order {
+    @include mixins.button-theme($theme: base.$primary-colour, $border: base.$primary-colour);
+    color: base.$body-colour
+  }
+
+  .modal_actions .modal_close:hover,
+  .modal_actions .modal_close:active {
+    background-color: base.$primary-colour;
+    color: base.$tone-secondary-colour
+  }
+
+  .modal_actions .modal_order:hover,
+  .modal_actions .modal_order:active {
+    background-color: base.$tone-secondary-colour;
+    color: base.$primary-colour;
+  }
+
