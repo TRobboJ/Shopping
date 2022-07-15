@@ -23,12 +23,12 @@ export default function LoginForm() {
 
     if (session) {
       sessionInfoText = <p>Signed in as {session.user.email}</p>
-      sessionAction = <button onClick={()=> signOut()}>Log out</button>
+      sessionAction = <button className={styles.modal_session_action} onClick={()=> signOut()}>Sign out</button>
     }
 
     else {
-      sessionInfoText = <p>Please log in. You will be redirected</p>
-      sessionAction = <button className={styles.modal_session_action} onClick={()=> signIn()}>Log in</button>
+      sessionInfoText = <p>Please sign in. You will be redirected.</p>
+      sessionAction = <button className={styles.modal_session_action} onClick={()=> signIn()}>Sign in</button>
     }
 
 
