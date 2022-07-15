@@ -4,17 +4,19 @@ import { closeLoginMenu } from '../../store/userSlice';
 import { useDispatch } from 'react-redux';
 import styles from './LoginForm.module.scss'
 import Link from 'next/link';
+
 import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function LoginForm() {
 
     const { data: session } = useSession()
 
-    
+
     const dispatch = useDispatch()
     function loginCloseHandler() {
         dispatch(closeLoginMenu());
       }
+
 
     let sessionInfoText
     let sessionAction
@@ -33,15 +35,17 @@ export default function LoginForm() {
   return (
     <Modal className={styles.cart}>
         {sessionInfoText}
+
         <div className={styles.modal_actions}>
           <button className={styles.modal_close} onClick={loginCloseHandler}>
             Close
           </button>
+
           {sessionAction}
+
         </div>
       
     </Modal>
   )
 }
-
   

@@ -7,12 +7,19 @@ import { useDispatch } from 'react-redux';
 import {
   closeMenu,
 } from "../../../store/hamburgerSlice";
+import { closeLoginMenu, openLoginMenu } from '../../../store/userSlice';
 
 export default function NavLinks() {
   const dispatch = useDispatch()
 
   function closeMenuHandler() {
     dispatch(closeMenu())
+  }
+  function closeLoginMenuHandler() {
+    dispatch(closeLoginMenu())
+  }
+  function openLoginMenuHandler() {
+    dispatch(openLoginMenu())
   }
 
   return (
@@ -35,9 +42,11 @@ export default function NavLinks() {
             {/* <li>
             <Search />
             </li> */}
-            {/* <li>
-            <Login />
-            </li> */}
+            <li>
+            
+            <a onClick={openLoginMenuHandler}>Login</a>
+            
+            </li>
             <li>
             <CartButton />
             </li>
