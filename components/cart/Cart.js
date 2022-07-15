@@ -22,6 +22,7 @@ export default function Cart() {
         <li>
           <CartItem
             isTitleItem={false}
+            id={product.id}
             key={product.id}
             title={product.title}
             totalPrice={product.totalPrice}
@@ -32,7 +33,7 @@ export default function Cart() {
         </li>
       );
     }));
-    totalCost = products.reduce(getTotalCostOfCartItems, totalCost)
+    totalCost = products.reduce(getTotalCostOfCartItems, totalCost).toFixed(2)
   }
   if (products.length === 0) {
     cartContent.push(<p>There is nothing in the cart!</p>);

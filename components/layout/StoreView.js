@@ -5,6 +5,7 @@ import styles from './StoreView.module.scss'
 import { useSelector, useDispatch } from 'react-redux';
 import { openMenu, closeMenu } from '../../store/filterSlice'
 import {TbLayoutSidebarLeftExpand} from 'react-icons/tb'
+import Loading from '../UI/Loading'
 
 export default function StoreView(props) {
   const dispatch = useDispatch()

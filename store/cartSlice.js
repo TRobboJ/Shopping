@@ -5,7 +5,8 @@ const cartSlice = createSlice({
   initialState: {
     products: [],
     cartQuantity: 0,
-    changed: false,
+    maxCartQuantity: 10,
+    changed: false, //Can be used to trigger css animations
     cartIsOpen: false,
   },
   reducers: {
@@ -21,18 +22,22 @@ const cartSlice = createSlice({
       const existingItem = state.products.find((product) => product.id === newProduct.id);
       state.cartQuantity++;
       state.changed = true;
+      //if the item exists in the cart already, add one to its quantity
+      if (existingItem) {
+        existingItem.quantity++;
+        existingItem.totalPrice +=  newProduct.price;
+      }
+      //otherwise add the entire item
       if (!existingItem) {
+        const defaultQuantity = 1
         state.products.push({
           id: newProduct.id,
           title: newProduct.title,
           price: newProduct.price,
           totalPrice: newProduct.price,
-          quantity: 1,
+          quantity: defaultQuantity,
           imageUrl: newProduct.imageUrl
         });
-      } else {
-        existingItem.quantity++;
-        existingItem.totalPrice +=  newProduct.price;
       }
     },
     removeItemFromCart(state, action) {
@@ -40,11 +45,14 @@ const cartSlice = createSlice({
       const existingItem = state.products.find((product) => product.id === id);
       state.cartQuantity--;
       state.changed = true;
+      //if the item is the last of its type in the cart than remove it completely
       if (existingItem.quantity === 1) {
         state.products = state.products.filter((product) => product.id !== id);
-      } else {
+      }
+      //otherwise, just remove one
+      if (existingItem.quantity > 1) {
         existingItem.quantity--;
-        existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
+        existingItem.totalPrice -= existingItem.price;
       }
     },
   },

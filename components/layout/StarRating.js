@@ -18,9 +18,9 @@ function generateRatingStars() {
   for (let i = numberOfRows; i > 0; i--) {
     let stars = [];
     for (let j = 0; j < numberOfStars; j++) {
-      if (i > j) stars.push(<AiFillStar id={i}/>);
+      if (i > j) stars.push(<AiFillStar key={Math.random() * i} id={i}/>);
       else {
-        stars.push(<AiOutlineStar id={i}/>);
+        stars.push(<AiOutlineStar key={Math.random() * i} id={i}/>);
       }
     }
 

@@ -1,10 +1,14 @@
 import React from 'react'
 import ProductDetail from '../../../components/products/ProductDetail'
-
+import Loading from '../../../components/UI/Loading'
 export default function index(props) {
   
   return (
+    <>
+    <Loading />
     <ProductDetail productData={props.productData} />
+    
+    </>
   )
 }
 

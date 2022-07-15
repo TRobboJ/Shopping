@@ -1,8 +1,9 @@
 @use "../../styles/base.scss";
+@use '../../styles/mixins.scss';
 
 .cart_item {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr) 0.5fr;
   grid-template-rows: 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 0px;
@@ -22,8 +23,51 @@
   max-height: 100px;
 }
 .spacing {
-  h4:not(:nth-child(2)),
+  
+  h4:not(:nth-child(2)){
+    margin-left: 0.2rem;
+  }
   p + p {
     margin-left: 1rem;
+  }
+}
+
+.cart_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
+
+
+.cart_buttons button {
+  @include mixins.button-theme($theme: base.$body-colour, $border: base.$primary-colour);
+}
+
+.cart_buttons button + button {
+  @include mixins.button-theme($theme: base.$primary-colour, $border: base.$primary-colour);
+  color: base.$body-colour
+}
+
+.cart_buttons button:hover,
+.cart_buttons button:active {
+  background-color: base.$primary-colour;
+  color: base.$tone-secondary-colour
+}
+
+.cart_buttons button + button:hover,
+.cart_buttons button + button:active {
+  background-color: base.$tone-secondary-colour;
+  color: base.$primary-colour;
+}
+
+
+@media (min-width: 768px) {
+  .spacing {
+    h4:not(:nth-child(2)),
+    p + p {
+      margin-left: 1rem;
+    }
   }
 }

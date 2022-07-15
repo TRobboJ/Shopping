@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./CartItem.module.scss";
+import { useDispatch } from "react-redux";
+import {addItemToCart, removeItemFromCart} from '../../store/cartSlice'
 
 export default function CartItem(props) {
-  const { title, price, quantity, key, totalPrice, imageUrl, isTitleItem } =
+  const { id, title, price, quantity, key, totalPrice, imageUrl, isTitleItem } =
     props;
     
 
@@ -18,8 +20,19 @@ export default function CartItem(props) {
     );
   }
   if (!isTitleItem) {
-
-    const titleLength = 50
+    const dispatch = useDispatch()
+    function addItemHandler() {
+      dispatch(addItemToCart({
+          id: id,
+          title: title,
+          price: price,
+          imageUrl: imageUrl
+      }))
+    }
+    function removeItemHandler() {
+      dispatch(removeItemFromCart(id))
+    }
+    const titleLength = 45
     const titleShortened = title.length > titleLength ? title.substring(0, titleLength - 3) + "..." :                     title;
 
     return (
@@ -29,8 +42,12 @@ export default function CartItem(props) {
         </div>
         <p>{titleShortened}</p>
         <p>{`x${quantity}`}</p>
-        <p>{price}</p>
-        <p>{totalPrice}</p>
+        <p>{price.toFixed(2)}</p>
+        <p>{totalPrice.toFixed(2)}</p>
+        <div className={styles.cart_buttons}>
+          <button onClick={removeItemHandler}>-</button>
+          <button onClick={addItemHandler}>+</button>
+        </div>
       </div>
     );
   }
