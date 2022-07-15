@@ -7,7 +7,7 @@
     padding: 2rem 0;
     font-family: base.$font-stack-body;
     h2,
-    p {
+    > p {
         max-width: 80%;
         margin: 1rem auto;
         text-align: center;
@@ -15,14 +15,37 @@
     h2 {
         padding-top: 1rem;
         border-top: 1px solid base.$highlight-colour;
+        width: 50%;
     }
 }
+
 .icons {
     padding: 0 1rem;
     margin: 0 auto;
-    width: 100%;
-    text-align: center;
-    > div {
-        padding: 0.4rem 0;
+    width: 50%;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+        > * {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+        }
+        > p {
+            border-left: 1px solid base.$highlight-colour;
+            align-self: center;
+            padding: 0.3rem 0.5rem 0.3rem 1.5rem;
+        }
+    
+}
+
+
+@media (min-width: 768px) {
+    .icons {
+        width: 30%;
+    }
+}
+@media (min-width: 1280px) {
+    .icons {
+        width: 20%;
     }
 }

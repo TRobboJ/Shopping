@@ -29,7 +29,7 @@ export default function StoreView(props) {
     )
 
   const topBarInfo = getTopBarInfo(props.productData, query, minPrice, maxPrice, ratingQuery)
-
+  
 
   return (
     <>
@@ -45,6 +45,7 @@ export default function StoreView(props) {
 
 
 function getTopBarInfo(productArray, searchQuery, minPrice, maxPrice, ratingQuery) {
+  if (!productArray) {return `Error collecting products`}
   let output = []
   //This is the default value to be returned to the topbar
   const noFilters = `Showing all results (${productArray.length} products)`

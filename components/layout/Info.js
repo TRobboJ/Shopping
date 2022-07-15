@@ -11,22 +11,26 @@ export default function Info() {
 
   return (
     <div className={styles.section}>
-      <h2>This website was created using the following technologies:</h2>
-      <div className={styles.icons}>
-        <div>
-          <SiReact color={reactIconColour} size={iconSize} />
-        </div>
-        <div>
-          <SiRedux color={reduxIconColour} size={iconSize} />
-        </div>
-        <div>
-          <SiNextdotjs color={nextIconColour} size={iconSize} />
-        </div>
-        <div>
-          <SiSass color={sassIconColour} size={iconSize} />
-        </div>
-      </div>
-      <p>and using the FakeStoreApi to fetch product data.</p>
+    <h2>This website was created using the following technologies:</h2>
+    <div className={styles.icons}>
+     
+        <SiReact color={reactIconColour} size={iconSize} />
+        <p>React</p>
+      
+        <SiRedux color={reduxIconColour} size={iconSize} />
+        <p>Redux</p>
+      
+        <SiNextdotjs color={nextIconColour} size={iconSize} />
+        <p>Next</p>
+     
+        <SiSass color={sassIconColour} size={iconSize} />
+        <p>Sass</p>
+     
+        <img src='https://next-auth.js.org/img/logo/logo-xs.png' height={iconSize} alt='NextAuth.js icon'></img>
+        <p>NextAuth</p>
+      
     </div>
+    <p>and using the FakeStoreApi to fetch product data.</p>
+  </div>
   );
 }

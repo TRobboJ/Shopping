@@ -1,18 +1,34 @@
 import React from 'react'
 import Link from 'next/link'
 import CartButton from '../../cart/CartButton'
-import Search from './Search'
+import { useSession } from "next-auth/react"
 import styles from './NavBar.module.scss';
 import { useDispatch } from 'react-redux';
 import {
   closeMenu,
 } from "../../../store/hamburgerSlice";
+import { closeLoginMenu, openLoginMenu } from '../../../store/userSlice';
 
 export default function NavLinks() {
   const dispatch = useDispatch()
+  const { data: session } = useSession()
 
   function closeMenuHandler() {
     dispatch(closeMenu())
+  }
+  function closeLoginMenuHandler() {
+    dispatch(closeLoginMenu())
+  }
+  function openLoginMenuHandler() {
+    dispatch(openLoginMenu())
+    closeMenuHandler()
+  }
+  let loggedInStatus
+  if (session) {
+    loggedInStatus = `Sign out`
+  }
+  if (!session) {
+    loggedInStatus = `Sign in`
   }
 
   return (
@@ -35,9 +51,11 @@ export default function NavLinks() {
             {/* <li>
             <Search />
             </li> */}
-            {/* <li>
-            <Login />
-            </li> */}
+            <li>
+            
+            <a onClick={openLoginMenuHandler}>{loggedInStatus}</a>
+            
+            </li>
             <li>
             <CartButton />
             </li>
