@@ -71,7 +71,7 @@ export default function Cart() {
   async function submitOrderToServer(userData) {
     setIsSubmitting(true);
 
-    const res = await fetch(process.env.FIREBASE_RTDB_URL + "/orders.json", {
+    const res = await fetch("https://portfolio-shopping-project-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json", {
       method: "POST",
       body: JSON.stringify({
         user: userData,

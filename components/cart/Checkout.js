@@ -80,6 +80,7 @@ export default function Checkout(props) {
 
 
   const invalidInput = <p>Please enter a valid input.</p>
+  const postalCodeInvalidInput = <p>Please enter a valid input. (6 numbers)</p>
 
 
   return (
@@ -107,7 +108,7 @@ export default function Checkout(props) {
       <div className={`${styles.input_container} ${formValidity.postalCode ? '' : styles.invalid}`}>
         <label htmlFor="postal-code">Postal Code</label>
         <input type="text" id="postal-code" ref={postalCodeRef} />
-        {!formValidity.postalCode && invalidInput}
+        {!formValidity.postalCode && postalCodeInvalidInput}
       </div>
       <div className={styles.modal_actions}>
         <button
