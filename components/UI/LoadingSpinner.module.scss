@@ -1,26 +1,26 @@
-@use '../../styles/base.scss';
+@use "../../styles/base.scss";
 
 @keyframes spinner {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
   }
-  .loading_spinner {
-    width: 75px;
-    height: 75px;
-    border: 20px solid base.$tone-secondary-colour;
-    border-top: 20px solid base.$tone-colour;
-    border-radius: 50%;
-    animation: spinner 1.5s linear infinite;
+  100% {
+    transform: rotate(360deg);
   }
+}
+.loading_spinner {
+  width: 75px;
+  height: 75px;
+  border: 20px solid base.$tone-secondary-colour;
+  border-top: 20px solid base.$tone-colour;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
 
-  .spinner_container {
-    position:fixed;
-    left: 50%;
-    top: 35%;
-    z-index: 1000;
-    transform: translate(-50%, -50%);
-  } 
+.spinner_container {
+  position: fixed;
+  left: 50%;
+  top: 35%;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+}

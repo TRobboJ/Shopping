@@ -1,25 +1,30 @@
-@use './base.scss';
+@use "./base.scss";
 
-@mixin button-theme($theme: base.$primary-colour, $border: base.$secondary-colour) {
-    font: inherit;
-    cursor: pointer;
-    background-color: $theme;
-    color: $border;
-    border: 2px solid $border;
-    border-radius: 15px;
-  }
+@mixin button-theme(
+  $theme: base.$primary-colour,
+  $border: base.$secondary-colour
+) {
+  font: inherit;
+  cursor: pointer;
+  background-color: $theme;
+  color: $border;
+  border: 2px solid $border;
+  border-radius: 15px;
+}
 
-  @mixin input-theme($bg: base.$tone-secondary-colour, $text: base.$input-colour,  $border: base.$input-border) {
-    font: inherit;
-    background-color: $bg;
-    color: $text;
-    border: 1px solid $border;
-    border-radius: 3px;
-    padding: 6px 10px;
-  }
+@mixin input-theme(
+  $bg: base.$tone-secondary-colour,
+  $text: base.$input-colour,
+  $border: base.$input-border
+) {
+  font: inherit;
+  background-color: $bg;
+  color: $text;
+  border: 1px solid $border;
+  border-radius: 3px;
+  padding: 6px 10px;
+}
 
- 
-  
 //   .info {
 //     @include theme;
 //   }
@@ -29,5 +34,3 @@
 //   .success {
 //     @include theme($theme: DarkGreen);
 //   }
-  
-  

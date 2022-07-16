@@ -33,7 +33,7 @@ const CartButton = () => {
   return (
     <button className={buttonClass} onClick={toggleCartHandler}>
       <span>
-        <FaShoppingCart /> 
+        <FaShoppingCart />
       </span>
       {cartQuantity > 0 && <span className={styles.badge}>{cartQuantity}</span>}
     </button>

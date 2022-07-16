@@ -1,43 +1,51 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  query: '',
+  query: "",
   minPrice: 0,
   maxPrice: Math.Infinity,
   ratingQuery: 0,
-}
+};
 
 export const fliterSlice = createSlice({
-  name: 'filter',
-  initialState: {...initialState, menuIsOpen: true}, //set back to false later
+  name: "filter",
+  initialState: { ...initialState, menuIsOpen: true }, //set back to false later
   reducers: {
     openMenu: (state) => {
-        state.menuIsOpen = true
+      state.menuIsOpen = true;
     },
     closeMenu: (state) => {
-        state.menuIsOpen = false
+      state.menuIsOpen = false;
     },
     filterQuery: (state, action) => {
-      state.query = action.payload.toString()
+      state.query = action.payload.toString();
     },
     setMinPrice: (state, action) => {
-      state.minPrice = parseInt(action.payload)
+      state.minPrice = parseInt(action.payload);
     },
     setMaxPrice: (state, action) => {
-      state.maxPrice = parseInt(action.payload)
+      state.maxPrice = parseInt(action.payload);
     },
     setRating: (state, action) => {
-      state.ratingQuery = parseInt(action.payload)
+      state.ratingQuery = parseInt(action.payload);
     },
     clearFilters: (state) => {
-      state.query = ''
-      state.minPrice = 0
-      state.maxPrice = Math.Infinity
-      state.ratingQuery = 0      
-    }
+      state.query = "";
+      state.minPrice = 0;
+      state.maxPrice = Math.Infinity;
+      state.ratingQuery = 0;
+    },
   },
-})
+});
 
-export const { openMenu, closeMenu, filterQuery, clearFilters, setMaxPrice, setMinPrice, setRating } = fliterSlice.actions
+export const {
+  openMenu,
+  closeMenu,
+  filterQuery,
+  clearFilters,
+  setMaxPrice,
+  setMinPrice,
+  setRating,
+} = fliterSlice.actions;
 
-export default fliterSlice.reducer
+export default fliterSlice.reducer;

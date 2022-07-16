@@ -1,27 +1,27 @@
-@use '../../styles/base.scss';
+@use "../../styles/base.scss";
 
 .topbar {
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 1px solid base.$tone-secondary-colour;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid base.$tone-secondary-colour;
 }
 
 .store_view {
-    display: flex;
+  display: flex;
 }
 
 .sidebar_icon {
-    color: base.$primary-colour;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  color: base.$primary-colour;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .sidebar_icon:hover {
-    color: base.$highlight-colour;
-    cursor: pointer;
+  color: base.$highlight-colour;
+  cursor: pointer;
 }
 .queries {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }

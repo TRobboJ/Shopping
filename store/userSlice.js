@@ -1,20 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
     menuIsOpen: false,
   },
   reducers: {
     openLoginMenu: (state) => {
-        state.menuIsOpen = true
+      state.menuIsOpen = true;
     },
     closeLoginMenu: (state) => {
-        state.menuIsOpen = false
+      state.menuIsOpen = false;
     },
   },
-})
+});
 
-export const { openLoginMenu, closeLoginMenu } = userSlice.actions
+export const { openLoginMenu, closeLoginMenu } = userSlice.actions;
 
-export default userSlice.reducer
+export default userSlice.reducer;

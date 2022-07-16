@@ -1,54 +1,55 @@
-  @use '../../styles/base.scss';
-  @use '../../styles/mixins.scss';
-  
-  .button span {
-    margin: 0 0.4rem;
-    text-transform: uppercase;
-  }
-  
-  .badge {
-    background-color: base.$secondary-colour;
-    border-radius: 30px;
-    padding: 0.05rem 0.45rem;
-    color: base.$primary-colour;
-  }
+@use "../../styles/base.scss";
+@use "../../styles/mixins.scss";
 
-  .button:hover {
-    .badge {
+.button span {
+  margin: 0 0.4rem;
+  text-transform: uppercase;
+}
+
+.badge {
+  background-color: base.$secondary-colour;
+  border-radius: 30px;
+  padding: 0.05rem 0.45rem;
+  color: base.$primary-colour;
+}
+
+.button:hover {
+  .badge {
     background-color: base.$primary-colour;
     color: base.$secondary-colour;
-   }
+  }
+}
+
+.button {
+  @include mixins.button-theme;
+  padding: 0.3rem 0.6rem;
+}
+
+.button:hover,
+.button:active {
+  @include mixins.button-theme(
+    $theme: base.$secondary-colour,
+    $border: base.$primary-colour
+  );
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.9);
   }
 
-  .button {
-    @include mixins.button-theme;
-    padding: 0.3rem 0.6rem;
-  }
-  
-  .button:hover,
-  .button:active {
-    @include mixins.button-theme($theme: base.$secondary-colour, $border: base.$primary-colour);
-  }
-  
-  .bump {
-    animation: bump 300ms ease-out;
+  50% {
+    transform: scale(1.1);
   }
 
-
-  @keyframes bump {
-    0% {
-      transform: scale(1);
-    }
-    20% {
-      transform: scale(0.9);
-    }
-
-    50% {
-      transform: scale(1.1);
-    }
-
-
-    100% {
-      transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
   }
+}

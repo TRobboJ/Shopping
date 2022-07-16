@@ -8,8 +8,8 @@ export default function Checkout(props) {
     lastName: true,
     email: true,
     address: true,
-    postalCode: true
-  })
+    postalCode: true,
+  });
 
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -49,8 +49,8 @@ export default function Checkout(props) {
       lastName: lastNameValid,
       email: emailValid,
       address: addressValid,
-      postalCode: postalCodeValid
-    })
+      postalCode: postalCodeValid,
+    });
 
     //check total form validity
     const formValid =
@@ -60,52 +60,67 @@ export default function Checkout(props) {
       addressValid &&
       postalCodeValid;
 
-    
-    
     if (!formValid) {
-      return
+      return;
     }
     if (formValid) {
       //sends userData to submitOrderToServer function in Cart.js
       props.onConfirm({
-          firstName: submittedFirstName,
-          lastName: submittedLastName,
-          email: submittedEmail,
-          address: submittedAddress,
-          postalCode: submittedPostalCode        
-      })
+        firstName: submittedFirstName,
+        lastName: submittedLastName,
+        email: submittedEmail,
+        address: submittedAddress,
+        postalCode: submittedPostalCode,
+      });
     }
-
   }
 
-
-  const invalidInput = <p>Please enter a valid input.</p>
-  const postalCodeInvalidInput = <p>Please enter a valid input. (6 numbers)</p>
-
+  const invalidInput = <p>Please enter a valid input.</p>;
+  const postalCodeInvalidInput = <p>Please enter a valid input. (6 numbers)</p>;
 
   return (
     <form onSubmit={confirmCheckoutHandler} className={styles.form}>
-      <div className={`${styles.input_container} ${formValidity.firstName ? '' : styles.invalid}`}>
+      <div
+        className={`${styles.input_container} ${
+          formValidity.firstName ? "" : styles.invalid
+        }`}
+      >
         <label htmlFor="first-name">First Name</label>
         <input type="text" id="first-name" ref={firstNameRef} />
         {!formValidity.firstName && invalidInput}
       </div>
-      <div className={`${styles.input_container} ${formValidity.lastName ? '' : styles.invalid}`}>
+      <div
+        className={`${styles.input_container} ${
+          formValidity.lastName ? "" : styles.invalid
+        }`}
+      >
         <label htmlFor="last-name">Last Name</label>
         <input type="text" id="last-name" ref={lastNameRef} />
         {!formValidity.lastName && invalidInput}
       </div>
-      <div className={`${styles.input_container} ${formValidity.email ? '' : styles.invalid}`}>
+      <div
+        className={`${styles.input_container} ${
+          formValidity.email ? "" : styles.invalid
+        }`}
+      >
         <label htmlFor="email">Email</label>
         <input type="text" id="email" ref={emailRef} />
         {!formValidity.email && invalidInput}
       </div>
-      <div className={`${styles.input_container} ${formValidity.address ? '' : styles.invalid}`}>
+      <div
+        className={`${styles.input_container} ${
+          formValidity.address ? "" : styles.invalid
+        }`}
+      >
         <label htmlFor="address">Address</label>
         <input type="text" id="address" ref={addressRef} />
         {!formValidity.address && invalidInput}
       </div>
-      <div className={`${styles.input_container} ${formValidity.postalCode ? '' : styles.invalid}`}>
+      <div
+        className={`${styles.input_container} ${
+          formValidity.postalCode ? "" : styles.invalid
+        }`}
+      >
         <label htmlFor="postal-code">Postal Code</label>
         <input type="text" id="postal-code" ref={postalCodeRef} />
         {!formValidity.postalCode && postalCodeInvalidInput}

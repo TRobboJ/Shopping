@@ -8,26 +8,28 @@ import { useDispatch } from "react-redux";
 import { shortenString } from "../../utils/utils";
 
 export default function Product(props) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { link, linkText, showDescription } = props.renderInfo;
-  const { id, title, description, price, rating, category, imageUrl } = props.productData;
-
+  const { id, title, description, price, rating, category, imageUrl } =
+    props.productData;
 
   const priceFormatted = `$${price.toFixed(2)}`;
   const categoryFormatted =
     category.charAt(0).toUpperCase() + category.slice(1);
 
-    function addItemToCartHandler(event) {
-      event.preventDefault()
-      dispatch(addItemToCart({
+  function addItemToCartHandler(event) {
+    event.preventDefault();
+    dispatch(
+      addItemToCart({
         id,
         price,
         title,
-        imageUrl
-      }))
-    }
-    const titleLength = 45
-    const titleShortened = shortenString(title, titleLength)
+        imageUrl,
+      })
+    );
+  }
+  const titleLength = 45;
+  const titleShortened = shortenString(title, titleLength);
   return (
     <div className={styles.product_info}>
       <h3>{showDescription ? title : titleShortened}</h3>
@@ -41,7 +43,7 @@ export default function Product(props) {
         {showDescription && (
           <p className={styles.product_description}>{description}</p>
         )}
-        <ProductForm buttonHandler={addItemToCartHandler}/>
+        <ProductForm buttonHandler={addItemToCartHandler} />
         <Link href={`/products/${link}`}>
           <a className={styles.product_detail}>{linkText}</a>
         </Link>

@@ -71,13 +71,16 @@ export default function Cart() {
   async function submitOrderToServer(userData) {
     setIsSubmitting(true);
 
-    const res = await fetch("https://portfolio-shopping-project-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json", {
-      method: "POST",
-      body: JSON.stringify({
-        user: userData,
-        order: products,
-      }),
-    });
+    const res = await fetch(
+      "https://portfolio-shopping-project-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: userData,
+          order: products,
+        }),
+      }
+    );
     setIsSubmitting(false);
 
     if (res.ok) {

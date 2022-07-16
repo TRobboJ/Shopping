@@ -1,18 +1,18 @@
 .product_card {
-    display:flex;
-    flex-direction: column;
-    width: 70%;
-    margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 1rem auto;
 }
 .product_img {
-    width: 80%;
-    max-width: 450px;
-    height: auto;
-    margin: 2rem auto;
-    text-align: center;
-    align-items: center;
+  width: 80%;
+  max-width: 450px;
+  height: auto;
+  margin: 2rem auto;
+  text-align: center;
+  align-items: center;
 }
 .product_img img {
-    width: 80%;
-    height: auto;
+  width: 80%;
+  height: auto;
 }

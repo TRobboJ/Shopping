@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -18,9 +18,9 @@
 }
 
 .no_results {
-    width: 100%;
-    text-align: center;
-    padding: 2rem 0;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
 }
 
 @media (min-width: 768px) {

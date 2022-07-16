@@ -1,20 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const hamburgerSlice = createSlice({
-  name: 'hamburger',
+  name: "hamburger",
   initialState: {
     menuIsOpen: false,
   },
   reducers: {
     openMenu: (state) => {
-        state.menuIsOpen = true
+      state.menuIsOpen = true;
     },
     closeMenu: (state) => {
-        state.menuIsOpen = false
+      state.menuIsOpen = false;
     },
   },
-})
+});
 
-export const { openMenu, closeMenu } = hamburgerSlice.actions
+export const { openMenu, closeMenu } = hamburgerSlice.actions;
 
-export default hamburgerSlice.reducer
+export default hamburgerSlice.reducer;

@@ -1,6 +1,6 @@
-import NavBar from './navigation/NavBar';
-import Footer from './Footer';
-import styles from './Layout.module.scss';
+import NavBar from "./navigation/NavBar";
+import Footer from "./Footer";
+import styles from "./Layout.module.scss";
 
 function Layout(props) {
   return (
@@ -8,15 +8,14 @@ function Layout(props) {
     //   <NavBar />
     //   <main>{props.children}
     //   </main>
-      
+
     //   <Footer />
     // </div>
     <>
-    <NavBar />
-    <main>{props.children}
-    </main>
-    
-    <Footer />
+      <NavBar />
+      <main>{props.children}</main>
+
+      <Footer />
     </>
   );
 }

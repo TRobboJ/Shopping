@@ -9,7 +9,7 @@ import {
   clearFilters,
   setMaxPrice,
   setMinPrice,
-  setRating
+  setRating,
 } from "../../store/filterSlice";
 import { FaRegWindowClose } from "react-icons/fa";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
@@ -50,26 +50,42 @@ export default function ProductSidebar(props) {
     dispatch(filterQuery(query));
   }
 
-  function filterMinPriceHandler(event) {    
+  function filterMinPriceHandler(event) {
     if (event.target.value < 0) return;
-    let minPrice
-    if (event.target.value === '' || event.target.value === null || event.target.value === 0) {minPrice = 0}
-    if (event.target.value > 0) {minPrice = event.target.value}
+    let minPrice;
+    if (
+      event.target.value === "" ||
+      event.target.value === null ||
+      event.target.value === 0
+    ) {
+      minPrice = 0;
+    }
+    if (event.target.value > 0) {
+      minPrice = event.target.value;
+    }
     dispatch(setMinPrice(minPrice));
   }
 
   function filterMaxPriceHandler(event) {
     if (event.target.value < 0) return;
-    let maxPrice
-    if (event.target.value === '' || event.target.value === null || event.target.value === 0) {maxPrice = Math.Infinity}
-    if (event.target.value > 0) {maxPrice = event.target.value}
+    let maxPrice;
+    if (
+      event.target.value === "" ||
+      event.target.value === null ||
+      event.target.value === 0
+    ) {
+      maxPrice = Math.Infinity;
+    }
+    if (event.target.value > 0) {
+      maxPrice = event.target.value;
+    }
     dispatch(setMaxPrice(maxPrice));
   }
 
   function filterRatingHandler(event) {
-    if (!event.target.id) return
-    const ratingQuery = event.target.id
-    dispatch(setRating(ratingQuery))
+    if (!event.target.id) return;
+    const ratingQuery = event.target.id;
+    dispatch(setRating(ratingQuery));
   }
 
   function clearAllFiltersHandler() {
@@ -135,8 +151,8 @@ export default function ProductSidebar(props) {
         <div className={styles.header}>
           <label>Reviews</label>
         </div>
-        <div className={styles.content} onClick={filterRatingHandler}>            
-            <StarRating />
+        <div className={styles.content} onClick={filterRatingHandler}>
+          <StarRating />
         </div>
 
         <div className={styles.header}>

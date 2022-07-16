@@ -1,16 +1,16 @@
-@use '../../styles/base.scss';
-  
-  .form button {
-    border: 1px solid base.$primary-colour;
-    background-color: base.$body-colour;
-    border-radius: 10px;
-    font-weight: 500;
-    padding: 0.3em 0.7em;
-    margin: 0.4rem 0;
-  }
-  
-  .form button:hover,
-  .form button:active {
-    background-color: base.$highlight-colour;
-    cursor: pointer;
-  }
+@use "../../styles/base.scss";
+
+.form button {
+  border: 1px solid base.$primary-colour;
+  background-color: base.$body-colour;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 0.3em 0.7em;
+  margin: 0.4rem 0;
+}
+
+.form button:hover,
+.form button:active {
+  background-color: base.$highlight-colour;
+  cursor: pointer;
+}
