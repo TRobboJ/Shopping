@@ -49,7 +49,7 @@
   }
 
   .header li {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: base.$secondary-colour;
     font-weight: 600;
     padding: 0 0 1.5rem 2rem;
@@ -86,7 +86,7 @@
   }
  
 
-@media (min-width: 768px){
+@media (min-width: 854px){
     .header .mobile_navigation {    
         display: none;
     }
@@ -113,7 +113,7 @@
       }
       
       .header {
-        padding: 0 5%;
+        padding: 0;
       }
       .header nav {
         display: flex;

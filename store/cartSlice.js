@@ -1,27 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const cartSlice = createSlice({
-  name: 'cart',
-  initialState: {
-    products: [],
+const initialState = {
+   products: [],
     cartQuantity: 0,
     maxCartQuantity: 10,
-    changed: false, //Can be used to trigger css animations
     cartIsOpen: false,
-  },
+}
+
+const cartSlice = createSlice({
+  name: 'cart',
+  initialState: initialState,
   reducers: {
     toggleCart(state) {
         state.cartIsOpen = !state.cartIsOpen;
       },
-    replaceCart(state, action) {
-      state.cartQuantity = action.payload.cartQuantity;
-      state.products = action.payload.products;
+    clearCart(state) {
+      state.products = initialState.products
+      state.cartQuantity = initialState.cartQuantity
     },
     addItemToCart(state, action) {
       const newProduct = action.payload;
       const existingItem = state.products.find((product) => product.id === newProduct.id);
       state.cartQuantity++;
-      state.changed = true;
+      
       //if the item exists in the cart already, add one to its quantity
       if (existingItem) {
         existingItem.quantity++;
@@ -44,7 +45,7 @@ const cartSlice = createSlice({
       const id = action.payload;
       const existingItem = state.products.find((product) => product.id === id);
       state.cartQuantity--;
-      state.changed = true;
+      
       //if the item is the last of its type in the cart than remove it completely
       if (existingItem.quantity === 1) {
         state.products = state.products.filter((product) => product.id !== id);
@@ -58,6 +59,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const {toggleCart, addItemToCart, removeItemFromCart} = cartSlice.actions;
+export const {toggleCart, clearCart, addItemToCart, removeItemFromCart} = cartSlice.actions;
 
 export default cartSlice.reducer;
