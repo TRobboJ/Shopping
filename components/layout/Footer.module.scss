@@ -12,7 +12,7 @@
 .footer .information {
     display: flex;
     color: base.$body-contrast;
-    min-height: 7rem;
+    min-height: 10rem;
     align-items: center;
     max-width: 80%;
     margin: 0 auto;
@@ -36,6 +36,8 @@
     color: base.$body-colour;
     background-color: base.$body-contrast;
     padding: 1.1rem 0 1.1rem 1rem;
+    
+    min-height: 3rem;
 }
 .copy p {
     margin: 0;

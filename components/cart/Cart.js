@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import Modal from "../UI/Modal";
 import styles from "./Cart.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCart } from "../../store/cartSlice";
 import CartItem from "./CartItem";
-
+import Checkout from "./Checkout";
 export default function Cart() {
+  const [showOrder, setShowOrder] = useState(false)
   const dispatch = useDispatch();
   const { products } = useSelector((state) => state.cart);
 
@@ -38,25 +39,31 @@ export default function Cart() {
   if (products.length === 0) {
     cartContent.push(<p>There is nothing in the cart!</p>);
   }
+  function orderHandler() {
+  setShowOrder(true)
+
+  }
+  const cartButtons = <div className={styles.modal_actions}>
+  <button className={styles.modal_close} onClick={cartCloseHandler}>
+    Close
+  </button>
+  <button className={styles.modal_order} onClick={orderHandler}>Order</button>
+</div>
 
   return (
     <Modal className={styles.cart}>
-      <h2>Your Shopping Cart</h2>
+      {!showOrder && <h2>Your Shopping Cart</h2> }
       <ul>
-        {cartContent}
+      {!showOrder && cartContent}
         {products.length !== 0 && (
           <div className={styles.total_cost}>
             <span>Total</span>
             <span>{`$${totalCost}`}</span>
           </div>
         )}
-        <div className={styles.modal_actions}>
-          <button className={styles.modal_close} onClick={cartCloseHandler}>
-            Close
-          </button>
-          <button className={styles.modal_order}>Order</button>
-        </div>
-      </ul>
+       {showOrder && <Checkout onClose={cartCloseHandler}/>}
+        {!showOrder && cartButtons}
+       </ul>
     </Modal>
   );
 }

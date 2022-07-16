@@ -14,4 +14,4 @@ Cart:
 ![Image of Shopping website homepage](https://github.com/TRobboJ/Shopping/blob/main/public/github/cart-view.jpg?raw=true)
 
 
-View the live demo here:https://shopping-three-lovat.vercel.app/
+View the live demo here: https://shopping-three-lovat.vercel.app/

@@ -25,7 +25,24 @@
 
   .navigation_wrapper ul li {
     font-weight: 500;
+    > a::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 0;
+      top: 5px;
+      background: transparent;
+      transition: all 0.3s;
+      
+    } 
+    > a:hover::after, li > a.active-nav::after {
+      width: 10%; //100% on large screens
+      background: base.$highlight-colour;
+    }
+    
   }
+
+
   
   .navigation_wrapper :nth-child(2) {
     order: -1;
@@ -90,6 +107,9 @@
         border: none;
         justify-content:space-around;
         align-items: center;
+        ul li > a:hover::after, li > a.active-nav::after {
+          width: 100%;
+        }
       }
       
       .header {

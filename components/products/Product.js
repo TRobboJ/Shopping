@@ -5,6 +5,7 @@ import { AiFillStar } from "react-icons/ai";
 import ProductForm from "./ProductForm";
 import { addItemToCart } from "../../store/cartSlice";
 import { useDispatch } from "react-redux";
+import { shortenString } from "../../utils/utils";
 
 export default function Product(props) {
   const dispatch = useDispatch()
@@ -25,9 +26,11 @@ export default function Product(props) {
         imageUrl
       }))
     }
+    const titleLength = 45
+    const titleShortened = shortenString(title, titleLength)
   return (
     <div className={styles.product_info}>
-      <h3>{title}</h3>
+      <h3>{showDescription ? title : titleShortened}</h3>
       <p>{categoryFormatted}</p>
       <p className={styles.price}>{priceFormatted}</p>
       <div className={styles.tags}>

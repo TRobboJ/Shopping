@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./CartItem.module.scss";
 import { useDispatch } from "react-redux";
 import {addItemToCart, removeItemFromCart} from '../../store/cartSlice'
+import { shortenString } from "../../utils/utils";
 
 export default function CartItem(props) {
   const { id, title, price, quantity, key, totalPrice, imageUrl, isTitleItem } =
@@ -33,7 +34,7 @@ export default function CartItem(props) {
       dispatch(removeItemFromCart(id))
     }
     const titleLength = 45
-    const titleShortened = title.length > titleLength ? title.substring(0, titleLength - 3) + "..." :                     title;
+    const titleShortened = shortenString(title, titleLength)
 
     return (
       <div key={key} className={[styles.cart_item, styles.spacing].join(' ')}>
