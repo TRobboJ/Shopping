@@ -32,3 +32,41 @@
     color: base.$primary-colour;
   }
 
+
+.form {
+  margin: 1rem;
+}
+
+.input_container {
+  margin-bottom: 0.5rem;
+}
+
+.input_container label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.input_container input {
+  font: inherit;
+  border: 1px solid base.$tone-colour;
+  border-radius: 4px;
+  width: 20rem;
+  max-width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.invalid label,
+.invalid p{
+  color: base.$error-colour;
+}
+
+.invalid input {
+  border-color: base.$error-colour;
+  background-color: base.$body-colour;
+}

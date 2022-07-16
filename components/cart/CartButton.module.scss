@@ -9,7 +9,7 @@
   .badge {
     background-color: base.$secondary-colour;
     border-radius: 30px;
-    padding: 0.25rem 0.75rem;
+    padding: 0.05rem 0.45rem;
     color: base.$primary-colour;
   }
 
@@ -22,7 +22,7 @@
 
   .button {
     @include mixins.button-theme;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.6rem;
   }
   
   .button:hover,
