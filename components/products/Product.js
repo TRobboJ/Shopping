@@ -49,5 +49,6 @@ export default function Product(props) {
         </Link>
       </div>
     </div>
+    
   );
 }

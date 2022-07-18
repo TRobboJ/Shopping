@@ -1,16 +1,16 @@
 @use "../../styles/base.scss";
 @import "../../styles/mixins.scss";
 
+
 .sidebar {
-  max-width: 30%;
+  max-width: 40%;
+  position: sticky;
+  background-color: base.$body-colour;
 }
 
 .sidebar_close_icon {
   color: base.$input-colour;
-
   text-align: right;
-  //   top: 0;
-  //   right: 0;
   z-index: 100;
   padding: 4px 0 0;
   opacity: 0.8;
@@ -48,6 +48,9 @@
 .content ul li:hover {
   color: base.$highlight-colour;
   cursor: pointer;
+}
+.content ul li:active {
+  color: base.$highlight-colour;
 }
 
 .price_input {

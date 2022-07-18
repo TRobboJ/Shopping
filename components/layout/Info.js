@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Info.module.scss";
-import { SiReact, SiRedux, SiNextdotjs, SiSass } from "react-icons/si";
+import { SiReact, SiRedux, SiNextdotjs, SiSass, SiFirebase } from "react-icons/si";
 
 export default function Info() {
   const iconSize = "40px";
@@ -8,6 +8,7 @@ export default function Info() {
   const reduxIconColour = "#764abc";
   const nextIconColour = "#242424";
   const sassIconColour = "#CD6799";
+  const firebaseIconColour = '#FFA000'
 
   return (
     <div className={styles.section}>
@@ -24,6 +25,9 @@ export default function Info() {
 
         <SiSass color={sassIconColour} size={iconSize} />
         <p>Sass</p>
+
+        <SiFirebase color={firebaseIconColour} size={iconSize} />
+        <p>Firebase</p>
 
         <img
           src="https://next-auth.js.org/img/logo/logo-xs.png"

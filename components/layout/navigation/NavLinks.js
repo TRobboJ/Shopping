@@ -68,6 +68,3 @@ export default function NavLinks() {
     </div>
   );
 }
-
-// https://youtu.be/Et5tDPoU03c?t=1753
-//framer-motion

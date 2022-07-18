@@ -12,7 +12,6 @@ import {
   setRating,
 } from "../../store/filterSlice";
 import { FaRegWindowClose } from "react-icons/fa";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import StarRating from "../layout/StarRating";
 
 export default function ProductSidebar(props) {
@@ -22,9 +21,11 @@ export default function ProductSidebar(props) {
 
   const categories = getUniqueCategories(props.productData);
   const renderCategories = categories.map((category, i) => {
+    const renderCategoryName =
+      category.charAt(0).toUpperCase() + category.slice(1);
     return (
       <li key={i} onClick={filterQueryHandler}>
-        {category.charAt(0).toUpperCase() + category.slice(1)}
+        {renderCategoryName}
       </li>
     );
   });

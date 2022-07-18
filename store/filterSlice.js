@@ -7,9 +7,21 @@ const initialState = {
   ratingQuery: 0,
 };
 
+//product filter menu will be closed by default on mobile view and open by default on tablets/desktop windows
+let defaultMenuState = true
+if (typeof window !== 'undefined'){
+const mediaQuery = window.matchMedia('(min-width: 650px)');
+if (mediaQuery.matches) {
+  defaultMenuState = true
+}
+if (!mediaQuery.matches) {
+  defaultMenuState = false
+}
+}
+
 export const fliterSlice = createSlice({
   name: "filter",
-  initialState: { ...initialState, menuIsOpen: true }, //set back to false later
+  initialState: { ...initialState, menuIsOpen: defaultMenuState }, 
   reducers: {
     openMenu: (state) => {
       state.menuIsOpen = true;
