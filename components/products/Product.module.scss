@@ -1,13 +1,5 @@
 @use "../../styles/base.scss";
 
-.card {
-  transition: all 0.2s ease-in-out;
-}
-
-.card:hover {
-  transform: translateY(-1%);
-}
-
 .list_item {
   height: 100%;
 }

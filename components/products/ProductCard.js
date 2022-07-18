@@ -24,7 +24,9 @@ export default function ProductCard(props) {
       >
         <img src={imageUrl} />
       </div>
+      <div className={styles.info_card}>
       <Product productData={props.productData} renderInfo={renderInfo} />
+      </div>
     </div>
   );
 }
